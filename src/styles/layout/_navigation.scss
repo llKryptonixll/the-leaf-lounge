@@ -1,0 +1,42 @@
+.desktop_nav{
+    position: fixed;
+    top: 0;
+    width: calc(100% - 180px);
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    height: 90px;
+    transition: 500ms;
+    
+    .link_list{
+        display: flex;
+
+        .list_item:nth-child(1){
+            margin-left: 0;
+        }
+        .list_item{
+            margin-left: 15px;
+            .link{
+                color: $dark-green;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .cart_icon{
+        background-color: $light-green;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        color: $soft-white-color;
+    }
+
+}
+
+.addNav_BG{
+    background-color: rgba(195, 226, 207, 0.356);
+    transition: 500ms;
+}

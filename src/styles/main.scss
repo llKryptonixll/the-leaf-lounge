@@ -1,6 +1,8 @@
 @import 'utilities/variables';
 @import 'utilities/mixins';
 
+@import 'base/reset';
+
 @import 'layout/navigation';
 @import 'layout/footer';
 @import 'layout/cart-modal';

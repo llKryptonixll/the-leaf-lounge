@@ -1,0 +1,134 @@
+.home_main {
+    background-color: $soft-white-color;
+    position: relative;
+    background-color: $soft-white-color;
+}
+.hero_section::after{
+    content: '';
+    background-color: $dark-green;
+    width: 350px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hero_section{
+    position: relative;
+    padding-left: 90px;
+    padding-right: 90px;
+    height: calc(100vh);
+    min-height: fit-content;
+    display: grid;
+    gap: 50px;
+    overflow-x: hidden;
+    grid-template-columns: 50% 50%;
+    @include grid-center;
+
+    .hero_article{
+        display: grid;
+        gap: 60px;
+        .text-wrapper{
+            display: grid;
+            gap: 10px;
+            .sub_header{
+                font-weight: 600;
+                color: $light-green;
+            }
+            h1{
+                font-size: clamp(1rem, 8vw, 4rem); 
+                width: 400px;
+                line-height: 75px;
+                color: $dark-green;
+            }
+            .main_text{
+                color: $gray-color;
+            }
+        }
+
+        .shop_now_btn{
+            @include flex-center;
+            background-color: $dark-green;
+            width: 160px;
+            height: 50px;
+            border-radius: 5px;
+            color: $soft-white-color;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: 200ms;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+
+            .cart_icon{
+                margin-left: 10px;
+            }
+        }
+        .shop_now_btn:hover{
+            border-color: $light-green;
+            letter-spacing: 2px;
+        }
+    }
+
+    .image_slider{
+        background-color: $black-color;
+        height: 70%;
+        width: 70%;
+        position: relative;
+        box-shadow: 5px 5px 15px rgb(48, 48, 48);
+
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero_section{
+        padding-top: 90px;
+        padding-bottom: 90px;
+        grid-template-columns: 100%;
+        width: auto;
+        height: auto;
+
+        .image_slider{
+            width: 100%;
+            height: 500px;
+        }
+    }
+    .hero_section::after{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero_section{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    
+        .hero_article{
+            .text-wrapper{
+                h1{
+                    width: auto;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 425px) {
+    .hero_section{
+        .image_slider{
+            height: 350px;
+        }
+    }
+}
+
