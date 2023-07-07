@@ -9,3 +9,13 @@
     justify-items: center;
     align-items: center;
 }
+
+@mixin padding-gap {
+    padding-left: 90px;
+    padding-right: 90px;
+
+    @media (max-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
