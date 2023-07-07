@@ -4,7 +4,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-const navbar = () => {
+const navbar = ({setIsOpen}) => {
 
   const [reachedTop, setReachedTop] = useState(true);
 
@@ -42,7 +42,7 @@ const navbar = () => {
         </ul>
 
         <div className='btn_container'>
-          <button className='bars_icon'>
+          <button onClick={() => setIsOpen(true)} className='bars_icon'>
             <FontAwesomeIcon icon={faBars} />
           </button>
           <button className='cart_icon'>
