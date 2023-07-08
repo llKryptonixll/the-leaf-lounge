@@ -1,12 +1,14 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import SidebarOpenContext from '../context/SidebarOpenContext'
 
-const navbar = ({setIsOpen}) => {
+const navbar = () => {
 
   const [reachedTop, setReachedTop] = useState(true);
+  const { isOpen, setIsOpen } = useContext(SidebarOpenContext);
 
   useEffect(() => {
     const handleScroll = () => {

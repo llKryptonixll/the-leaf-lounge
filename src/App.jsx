@@ -1,5 +1,5 @@
 import './styles/main.scss'
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
@@ -9,20 +9,19 @@ import Home from './pages/home/Home'
 import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
 import Shop from './pages/shop/Shop'
+import SidebarOpenContext from './context/SidebarOpenContext'
+
 
 function App() {
-
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <Navbar 
-        setIsOpen={setIsOpen}
-      />
-      <Sidebar 
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
+      <SidebarOpenContext.Provider value={{isOpen, setIsOpen}}>
+        <Navbar />
+        <Sidebar />
+      </SidebarOpenContext.Provider>
+
       <Routes>
         <Route index element={<Home />}/>
         <Route path='about' element={<About />}/>
