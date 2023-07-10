@@ -10,6 +10,24 @@
     align-items: center;
 }
 
+@mixin general-header{
+    .header{
+        text-align: center;
+
+        p{
+            font-weight: 600;
+        }
+        p:nth-child(1){
+            color: $black-color;
+            font-size: 1.1rem;
+        }
+        p:nth-child(2){
+            color: $dark-green;
+            font-size: clamp(1rem, 7vw, 2rem);
+        }
+    }
+}
+
 @mixin padding-gap {
     padding-left: 90px;
     padding-right: 90px;
