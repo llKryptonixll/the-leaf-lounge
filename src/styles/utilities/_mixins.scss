@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+@mixin grid-center-content {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
 @mixin general-header{
     .header{
         text-align: center;

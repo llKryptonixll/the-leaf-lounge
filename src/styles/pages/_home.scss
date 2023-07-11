@@ -275,6 +275,61 @@
     }
 }
 
+
+//testimonial section styles
+.testimonial_section{
+    height: 500px;
+    width: 100%;
+    background-color: hsl(141, 41%, 92%);
+    margin-top: 100px;
+
+    .slide_container{
+        height: 100%;
+        position: relative;
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: $dark-green;
+          }
+
+        .slide_item{
+            @include grid-center-content;
+            gap: 20px;
+
+            .star_rating_container{
+                .star_icon{
+                    color: $dark-green;
+                    margin-left: 8px;
+                }
+                .star_icon:nth-child(1){
+                    margin-left: 0;
+                }
+            }
+
+            .rating_text{
+                width: min(90%, 1400px);
+                font-family: 'Libre Baskerville', serif;
+                font-size: clamp(0.9rem, 4vw, 1.5rem); 
+            }
+
+            .person_details_container{
+                @include grid-center;
+                gap: 20px;
+                img{
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                }
+                p{
+                    color: $black-color;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1100px) {
     .hero_section{
         padding-top: 150px;
