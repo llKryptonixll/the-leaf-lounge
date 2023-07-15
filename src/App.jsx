@@ -1,5 +1,5 @@
 import './styles/main.scss'
-import { useState, createContext } from 'react'
+import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'

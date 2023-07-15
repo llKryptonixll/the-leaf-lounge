@@ -19,7 +19,6 @@
         .list_item{
             margin-left: 15px;
             .link{
-                color: $dark-green;
                 font-weight: 600;
             }
         }
@@ -127,4 +126,10 @@
 .sidebarOpen{
     left: 0;
     transition: 250ms;
+}
+.activePath{
+    color: $dark-green;
+}
+.notActivePath{
+    color: $black-color;
 }

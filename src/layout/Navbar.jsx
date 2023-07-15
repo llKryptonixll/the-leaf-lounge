@@ -4,9 +4,10 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import SidebarOpenContext from '../context/SidebarOpenContext'
+import useCurrentLocation from '../hooks/useCurrentLocation'
 
 const navbar = () => {
-
+  const { getClassName } = useCurrentLocation();
   const [reachedTop, setReachedTop] = useState(true);
   const { isOpen, setIsOpen } = useContext(SidebarOpenContext);
 
@@ -30,16 +31,16 @@ const navbar = () => {
         <img className='logo' src="images/leaf-lounge-logo.png" alt="company-logo" />
         <ul className='link_list'>
           <li className='list_item'>
-            <Link className='link' to={"/"}>Home</Link>
+            <Link className={`link ${getClassName("/")}`} to={"/"}>Home</Link>
           </li>
           <li className='list_item'>
-            <Link className='link' to={"/about"}>About</Link>
+            <Link className={`link ${getClassName("/about")}`} to={"/about"}>About</Link>
           </li>
           <li className='list_item'>
-            <Link className='link' to={"/shop"}>Shop</Link>
+            <Link className={`link ${getClassName("/shop")}`} to={"/shop"}>Shop</Link>
           </li>
           <li className='list_item'>
-            <Link className='link' to={"/contact"}>Contact</Link>
+            <Link className={`link ${getClassName("/contact")}`} to={"/contact"}>Contact</Link>
           </li>
         </ul>
 
