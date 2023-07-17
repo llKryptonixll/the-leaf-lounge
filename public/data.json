@@ -1,0 +1,64 @@
+{
+    "team_data": [
+        {
+            "id": 1,
+            "image": "images/about-images/person_1.jpg",
+            "name": "Evelyn Greenleaf",
+            "profession": "Owner"   
+        },
+        {
+            "id": 2,
+            "image": "images/about-images/person_2.jpg",
+            "name": "Lily Ramirez",
+            "profession": "Sales Associate"   
+        },
+        {
+            "id": 3,
+            "image": "images/about-images/person_3.jpg",
+            "name": "Grace Bennett",
+            "profession": "Visual Merchandiser"   
+        },
+        {
+            "id": 4,
+            "image": "images/about-images/person_4.jpg",
+            "name": "Sophia Nguyen",
+            "profession": "Inventory Manager"   
+        },
+        {
+            "id": 5,
+            "image": "images/about-images/person_5.jpg",
+            "name": "Ava Thompson",
+            "profession": "Customer Service Representative"   
+        },
+        {
+            "id": 6,
+            "image": "images/about-images/person_6.jpg",
+            "name": "Benjamin Moss",
+            "profession": "Plant Care Specialist"   
+        },
+        {
+            "id": 7,
+            "image": "images/about-images/person_7.jpg",
+            "name": "Samuel Greene",
+            "profession": "Nursery Grower"   
+        },
+        {
+            "id": 8,
+            "image": "images/about-images/person_8.jpg",
+            "name": "Logan Anderson",
+            "profession": "Delivery Driver"   
+        },
+        {
+            "id": 9,
+            "image": "images/about-images/person_9.jpg",
+            "name": "Harper Mitchell",
+            "profession": "Plant Stylist/Decorator"   
+        },
+        {
+            "id": 10,
+            "image": "images/about-images/person_10.jpg",
+            "name": "Ethan Sullivan",
+            "profession": "Marketing Coordinator"   
+        }
+    ]
+}

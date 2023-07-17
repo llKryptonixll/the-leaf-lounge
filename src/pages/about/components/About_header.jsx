@@ -2,7 +2,7 @@ import React from 'react'
 
 const About_header = () => {
   return (
-    <section className='about_header_container'>
+    <section className='about_header_section'>
         <div className='text_wrapper'>
             <p>Evergreen Florist embracing the Language of Flowers</p>
             <p>

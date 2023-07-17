@@ -7,7 +7,6 @@ footer{
     .main_container{
         @include padding-gap;
         display: flex;
-
         justify-content: center;
 
         .general_wrapper{

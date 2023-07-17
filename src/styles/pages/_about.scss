@@ -1,13 +1,13 @@
 .about_main{
     @include padding-gap;
-    position: relative;
-    top: 90px;
-    height: calc(100vh - 90px);
 
-    .about_header_container{
+    .about_header_section{
         @include grid-center;
         grid-template-columns: 50% 50%;
         height: 100%;
+        position: relative;
+        top: 90px;
+        height: calc(100vh - 90px);
 
         .text_wrapper{
             display: grid;
@@ -31,24 +31,105 @@
         .image_wrapper{
             display: grid;
             justify-items: end;
+            align-items: center;
             width: 100%;
             img{
+                width: 100%;
                 object-fit: cover;
-                width: 90%;
-                height: auto;
             }
+        }
+    }
+
+    .about_team_section{
+        @include grid-center;
+        margin-top: 200px;
+        text-align: center;
+        gap: 50px;
+
+        .header{
+            p:nth-child(1){
+                font-family: 'Libre Baskerville', serif;
+                color: $light-green;
+            }
+            p:nth-child(2){
+                color: $dark-green;
+                font-weight: 600;
+                font-size: clamp(1.2rem, 4vw, 2rem);
+                width: 500px;
+            }
+        }
+
+        .team_container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 20px;
+
+            .team_item_container{
+                .image_wrapper{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+                .team_info_wrapper{
+                    p:nth-child(1){
+                        font-size: 1.5rem;
+                        color: $dark-green;
+                        font-weight: 600;
+                    }
+                    p:nth-child(2){
+                        font-family: 'Libre Baskerville', serif;
+                        color: $light-green;
+                    }
+                }
+            }
+        }
+
+        .view_more_btn {
+            position: relative;
+            font-size: 0.9rem;
+            border-right: 2px solid $dark-green;
+            border-left: 2px solid $dark-green;
+            color: $black-color;
+            padding: 10px 20px;
+        }
+        .view_more_btn::before, .view_more_btn::after {
+            content: "";
+            background-color: $dark-green;
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            transition: 250ms ease;
+        }
+        .view_more_btn::before{
+            left: -2px;
+        }
+        .view_more_btn::after {
+            right: -2px;
+        }
+
+        .view_more_btn:hover::before, .view_more_btn:hover::after{
+            width: calc(50% + 2px);
+            transition: 250ms ease;
+        }
+        .view_more_btn:hover{
+            color: $soft-white-color;
         }
     }
 }
 
 @media (max-width: 1250px) {
     .about_main{
-        height: min-content;
-        .about_header_container{
+        .about_header_section{
             margin-top: 20px;
-            margin-bottom: 100px;
+            margin-bottom: 200px;
             grid-template-columns: 100%;
             gap: 50px;
+            height: min-content;
 
             .text_wrapper{
                 p:nth-child(2){
@@ -69,9 +150,34 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .about_main{
+        .about_team_section{
+            .team_container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    } 
+}
+
+@media (max-width: 550px) {
+    .about_main{
+        .about_team_section{
+            .header{
+                p:nth-child(2){
+                    width: 100%;
+                }
+            }
+            .team_container{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    } 
+}
+
 @media (max-width: 425px) {
     .about_main{
-        .about_header_container{
+        .about_header_section{
             .image_wrapper{
                 img{
                     width: 100%;
