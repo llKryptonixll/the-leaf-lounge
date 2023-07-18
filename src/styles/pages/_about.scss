@@ -4,7 +4,6 @@
     .about_header_section{
         @include grid-center;
         grid-template-columns: 50% 50%;
-        height: 100%;
         position: relative;
         top: 90px;
         height: calc(100vh - 90px);

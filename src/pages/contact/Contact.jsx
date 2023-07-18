@@ -1,8 +1,15 @@
 import React from 'react'
+import ContactHeader from './components/ContactHeader'
+import Mapbox from './components/Mapbox'
+import ContactForm from './components/ContactForm'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <main className='main_contact'>
+      <ContactHeader />
+      <Mapbox />
+      <ContactForm />
+    </main>
   )
 }
 
