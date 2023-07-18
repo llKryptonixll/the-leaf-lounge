@@ -129,7 +129,10 @@
 }
 .activePath{
     color: $dark-green;
+    letter-spacing: 2px;
+    transition: 250ms;
 }
 .notActivePath{
     color: $black-color;
+    transition: 250ms;
 }
