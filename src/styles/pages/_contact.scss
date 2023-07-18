@@ -75,6 +75,25 @@
             }
         }
     }
+
+    .mapbox_section{
+        background-color: $black-color;
+        width: 100%;
+        height: 600px;
+
+        .map_marker{
+            @include flex-center;
+            border: 1px solid $gray-color;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+
+            .icon{
+                font-size: 1.5rem;
+                color: $light-green;
+            }
+        }
+    }
 }
 
 @media (max-width: 1200px) {
