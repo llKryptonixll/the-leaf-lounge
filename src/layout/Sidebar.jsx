@@ -16,16 +16,16 @@ const Sidebar = () => {
           CLOSE <FontAwesomeIcon className='x_icon' icon={faXmark} />
         </button>
         <ul className='link_list'>
-          <li className='list_item'>
+          <li onClick={() => setIsOpen(false)} className='list_item'>
             <Link to={"/"} className='link'>HOME <FontAwesomeIcon icon={faChevronRight} /></Link>
           </li>
-          <li className='list_item'>
+          <li onClick={() => setIsOpen(false)} className='list_item'>
             <Link to={"/about"} className='link'>ABOUT <FontAwesomeIcon icon={faChevronRight} /></Link>
           </li>
-          <li className='list_item'>
+          <li onClick={() => setIsOpen(false)} className='list_item'>
             <Link to={"/shop"} className='link'>SHOP <FontAwesomeIcon icon={faChevronRight} /></Link>
           </li>
-          <li className='list_item'>
+          <li onClick={() => setIsOpen(false)} className='list_item'>
             <Link to={"/contact"} className='link'>CONTACT <FontAwesomeIcon icon={faChevronRight} /></Link>
           </li>
         </ul>
