@@ -8,6 +8,7 @@
         top: 90px;
         margin-bottom: 90px;
         height: calc(100vh - 90px);
+        min-height: 700px;
 
         .main_header{
             color: $black-color;
@@ -91,6 +92,105 @@
             .icon{
                 font-size: 1.5rem;
                 color: $light-green;
+            }
+        }
+    }
+
+    .form_section{
+        display: grid;
+        gap: 50px;  
+        margin-top: 100px;
+        margin-bottom: 100px;
+        
+        .form_header{
+            text-align: center;
+            @include padding-gap;
+            p:nth-child(1){
+                font-size: clamp(1rem, 8vw, 2.2rem);
+                font-weight: 600;
+                color: $black-color;
+            }
+            p:nth-child(2){
+                color: $gray-color;
+            }
+        }
+
+        form{
+            @include padding-gap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 50px;
+            row-gap: 25px;
+
+            .input_wrapper{
+                display: grid;
+                width: 100%;
+            }
+            .input_wrapper:nth-child(3){
+                grid-column: 1/3;
+            }
+            input{
+                height: 60px;
+            }
+            input, textarea{
+                border: none;
+                background-color: #ececec;
+                outline-color: $light-green;
+                padding-left: 15px;  
+            }
+            ::placeholder{
+                color: $gray-color;
+                font-size: 0.9rem;
+            }
+            textarea{
+                resize: none;
+                height: 300px;
+                width: 100%;
+                padding-left: 15px;
+                padding-top: 15px;
+            }
+            .submit_button{
+                position: relative;
+                z-index: 1;
+                grid-row: 3;
+                justify-self: start;
+                background-color: $dark-green;
+                width: 160px;
+                height: 50px;
+                color: $soft-white-color;
+                font-size: 1rem;
+            }
+            .submit_button::after{
+                content: '';
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: $light-green;
+                width: 0;
+                height: 100%;
+                transition: 250ms;
+            }
+            .submit_button:hover::after{
+                width: 100%;
+                transition: 250ms;
+            }
+        }
+
+        @media (max-width: 580px){
+            form{
+                grid-template-columns: 100%;
+
+                .input_wrapper:nth-child(2){
+                    grid-row: 2;
+                }
+                .input_wrapper:nth-child(3){
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+                .submit_button{
+                    grid-row: 4;
+                }
             }
         }
     }
