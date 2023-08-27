@@ -2,61 +2,61 @@
     "team_data": [
         {
             "id": 1,
-            "image": "images/about-images/person_1.jpg",
+            "image": "images/about-images/person_1.webp",
             "name": "Evelyn Greenleaf",
             "profession": "Owner"   
         },
         {
             "id": 2,
-            "image": "images/about-images/person_2.jpg",
+            "image": "images/about-images/person_2.webp",
             "name": "Lily Ramirez",
             "profession": "Sales Associate"   
         },
         {
             "id": 3,
-            "image": "images/about-images/person_3.jpg",
+            "image": "images/about-images/person_3.webp",
             "name": "Grace Bennett",
             "profession": "Visual Merchandiser"   
         },
         {
             "id": 4,
-            "image": "images/about-images/person_4.jpg",
+            "image": "images/about-images/person_4.webp",
             "name": "Sophia Nguyen",
             "profession": "Inventory Manager"   
         },
         {
             "id": 5,
-            "image": "images/about-images/person_5.jpg",
+            "image": "images/about-images/person_5.webp",
             "name": "Ava Thompson",
             "profession": "Customer Service Representative"   
         },
         {
             "id": 6,
-            "image": "images/about-images/person_6.jpg",
+            "image": "images/about-images/person_6.webp",
             "name": "Benjamin Moss",
             "profession": "Plant Care Specialist"   
         },
         {
             "id": 7,
-            "image": "images/about-images/person_7.jpg",
+            "image": "images/about-images/person_7.webp",
             "name": "Samuel Greene",
             "profession": "Nursery Grower"   
         },
         {
             "id": 8,
-            "image": "images/about-images/person_8.jpg",
+            "image": "images/about-images/person_8.webp",
             "name": "Logan Anderson",
             "profession": "Delivery Driver"   
         },
         {
             "id": 9,
-            "image": "images/about-images/person_9.jpg",
+            "image": "images/about-images/person_9.webp",
             "name": "Harper Mitchell",
             "profession": "Plant Stylist/Decorator"   
         },
         {
             "id": 10,
-            "image": "images/about-images/person_10.jpg",
+            "image": "images/about-images/person_10.webp",
             "name": "Ethan Sullivan",
             "profession": "Marketing Coordinator"   
         }
@@ -67,35 +67,35 @@
             {
                 "name": "cool plant",
                 "price": 27.5,
-                "image": "images/shop-images/succulents/1.jpg"
+                "image": "images/shop-images/succulents/1.webp"
             }
         ],
         "potter_plants": [
             {
                 "name": "cool plant",
                 "price": 27.5,
-                "image": "images/shop-images/potter plants/1.jpg"
+                "image": "images/shop-images/potter plants/1.webp"
             }
         ],
         "terrariums": [
             {
                 "name": "cool plant",
                 "price": 27.5,
-                "image": "images/shop-images/terrariums/1.jpg"
+                "image": "images/shop-images/terrariums/1.webp"
             }
         ],
         "small_plants": [
             {
                 "name": "cool plant",
                 "price": 27.5,
-                "image": "images/shop-images/small plants/1.jpg"
+                "image": "images/shop-images/small plants/1.webp"
             }
         ],
         "cactuses": [
             {
                 "name": "cool plant",
                 "price": 27.5,
-                "image": "images/shop-images/cactuses/1.jpg"
+                "image": "images/shop-images/cactuses/1.webp"
             }
         ]
     }

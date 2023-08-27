@@ -29,7 +29,7 @@ const Testimonials = () => {
             I highly recommend them for their top-notch plants and exceptional service."
           </p>
           <div className='person_details_container'>
-            <img src="images/home-images/testimonial_1.jpg" alt="female-person" />
+            <img src="images/home-images/testimonial_1.webp" alt="female-person" />
             <p>Sarah Montgomery</p>
           </div>
         </SwiperSlide>
@@ -48,7 +48,7 @@ const Testimonials = () => {
             The Leaf Lounge is a true gem for plant enthusiasts!"
           </p>
           <div className='person_details_container'>
-            <img src="images/home-images/testimonial_2.jpg" alt="female-person" />
+            <img src="images/home-images/testimonial_2.webp" alt="female-person" />
             <p>Emma Thompson</p>
           </div>
         </SwiperSlide>
@@ -67,7 +67,7 @@ const Testimonials = () => {
             The Leaf Lounge is my one-stop shop for all my gardening needs!"
           </p>
           <div className='person_details_container'>
-            <img src="images/home-images/testimonial_3.jpg" alt="male-person" />
+            <img src="images/home-images/testimonial_3.webp" alt="male-person" />
             <p>Mark Davis</p>
           </div>
         </SwiperSlide>

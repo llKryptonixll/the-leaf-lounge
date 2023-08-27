@@ -36,16 +36,16 @@ const HeroSection = () => {
         modules={[Autoplay]}
       >
         <SwiperSlide className='image_item'>
-          <img src="images/home-images/hero-plant4.jpg" alt="plant-image" />
+          <img src="images/home-images/hero-plant4.webp" alt="plant-image" />
         </SwiperSlide>
         <SwiperSlide className='image_item'>
-          <img src="images/home-images/hero-plant1.jpg" alt="plant-image" />
+          <img src="images/home-images/hero-plant1.webp" alt="plant-image" />
         </SwiperSlide>
         <SwiperSlide className='image_item'>
-          <img src="images/home-images/hero-plant2.jpg" alt="plant-image" />
+          <img src="images/home-images/hero-plant2.webp" alt="plant-image" />
         </SwiperSlide>
         <SwiperSlide className='image_item'>
-          <img src="images/home-images/hero-plant3.jpg" alt="plant-image" />
+          <img src="images/home-images/hero-plant3.webp" alt="plant-image" />
         </SwiperSlide>
       </Swiper>
     </section>

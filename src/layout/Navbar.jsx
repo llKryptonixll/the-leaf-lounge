@@ -28,7 +28,7 @@ const navbar = () => {
   return (
     <header>
       <nav className={`desktop_nav ${reachedTop === true ? "" : "addNav_BG"}`}>
-        <img className='logo' src="images/leaf-lounge-logo.png" alt="company-logo" />
+        <img className='logo' src="images/leaf-lounge-logo.webp" alt="company-logo" />
         <ul className='link_list'>
           <li className='list_item'>
             <Link className={`link ${getClassName("/")}`} to={"/"}>Home</Link>

@@ -17,7 +17,7 @@ const DecorateSection = () => {
         <ul className='icon_text_list'>
           <li className='list_item'>
             <div className='icon_wrapper'>
-              <img src="images/home-images/quality_icon.png" alt="quality-icon" />
+              <img src="images/home-images/quality_icon.webp" alt="quality-icon" />
             </div>
             <div className='content_wrapper'>
               <p>Unbeatable quality</p>
@@ -26,7 +26,7 @@ const DecorateSection = () => {
           </li>
           <li className='list_item'>
             <div className='icon_wrapper'>
-              <img src="images/home-images/delivery_icon.png" alt="delivery-icon" />
+              <img src="images/home-images/delivery_icon.webp" alt="delivery-icon" />
             </div>
             <div className='content_wrapper'>
               <p>Fast delivery to your door</p>
@@ -35,7 +35,7 @@ const DecorateSection = () => {
           </li>
           <li className='list_item'>
             <div className='icon_wrapper'>
-              <img src="images/home-images/plant_icon.png" alt="plant-icon" />
+              <img src="images/home-images/plant_icon.webp" alt="plant-icon" />
             </div>
             <div className='content_wrapper'>
               <p>Infuse your life with nature</p>
@@ -46,7 +46,7 @@ const DecorateSection = () => {
       </article>
 
       <div className='img_container'>
-        <img src="images/home-images/decorate_plant.png" alt="plant" />
+        <img src="images/home-images/decorate_plant.webp" alt="plant" />
       </div>
 
     </section>

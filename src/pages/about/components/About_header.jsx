@@ -11,7 +11,7 @@ const About_header = () => {
             <p>Evelyn Greenleaf, owner</p>
         </div>
         <div className='image_wrapper'>
-            <img src="images/about-images/about_header_img.png" alt="flower" />
+            <img src="images/about-images/about_header_img.webp" alt="flower" />
         </div>
     </section>
   )

@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <div className='main_container'>
         <div className="general_wrapper">
-          <img src="images/leaf-lounge-logo.png" alt="company_logo" />
+          <img src="images/leaf-lounge-logo.webp" alt="company_logo" />
           <p>The Leaf Lounge: A Treasury of Insights by the Skillful Plant Connoisseurs</p>
           <div className='hotline_container'>
             <span>hotline:</span>
