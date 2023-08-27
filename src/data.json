@@ -60,5 +60,43 @@
             "name": "Ethan Sullivan",
             "profession": "Marketing Coordinator"   
         }
-    ]
+    ],
+
+    "plantsData": {
+        "succulents": [
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/succulents/1.jpg"
+            }
+        ],
+        "potter_plants": [
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/potter plants/1.jpg"
+            }
+        ],
+        "terrariums": [
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/terrariums/1.jpg"
+            }
+        ],
+        "small_plants": [
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/1.jpg"
+            }
+        ],
+        "cactuses": [
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/cactuses/1.jpg"
+            }
+        ]
+    }
 }
