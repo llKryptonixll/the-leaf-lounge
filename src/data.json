@@ -68,6 +68,16 @@
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/succulents/1.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/succulents/2.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/succulents/3.webp"
             }
         ],
         "potter_plants": [
@@ -75,6 +85,21 @@
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/potter plants/1.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/potter plants/2.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/potter plants/3.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/potter plants/4.webp"
             }
         ],
         "terrariums": [
@@ -89,6 +114,36 @@
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/1.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/2.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/3.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/4.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/5.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/6.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/small plants/7.webp"
             }
         ],
         "cactuses": [
@@ -96,6 +151,16 @@
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/cactuses/1.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/cactuses/2.webp"
+            },
+            {
+                "name": "cool plant",
+                "price": 27.5,
+                "image": "images/shop-images/cactuses/3.webp"
             }
         ]
     }
