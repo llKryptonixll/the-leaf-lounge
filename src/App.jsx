@@ -29,7 +29,7 @@ function App() {
         <Sidebar />
       </SidebarOpenContext.Provider>
 
-      <ShopFilterContext.Provider value={{selectedCategory, setSelectedCategory, allPlants, filteredPlants}}>
+      <ShopFilterContext.Provider value={{selectedCategory, setSelectedCategory, filteredPlants}}>
         <Routes>
           <Route index element={<Home />}/>
           <Route path='shop' element={<Shop />}/>
