@@ -5,7 +5,7 @@ import ShopFilterContext from '../../context/ShopFilterContext';
 
 const Shop = () => {
 
-  const { selectedCategory, setSelectedCategory, allPlants, filteredPlants } = useContext(ShopFilterContext);
+  const { selectedCategory, setSelectedCategory, filteredPlants } = useContext(ShopFilterContext);
 
   return (
     <main className='main_shop'>
