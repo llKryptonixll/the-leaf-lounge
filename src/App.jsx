@@ -1,6 +1,7 @@
 import './styles/main.scss'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import data from './data.json'
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
 import Sidebar from './layout/Sidebar'
@@ -10,10 +11,16 @@ import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
 import Shop from './pages/shop/Shop'
 import SidebarOpenContext from './context/SidebarOpenContext'
+import ShopFilterContext from './context/ShopFilterContext'
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // shop item filter
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const allPlants = Object.values(data.plantsData).flat();
+  const filteredPlants = selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLocaleLowerCase()]
 
   return (
     <>
@@ -22,12 +29,14 @@ function App() {
         <Sidebar />
       </SidebarOpenContext.Provider>
 
-      <Routes>
-        <Route index element={<Home />}/>
-        <Route path='about' element={<About />}/>
-        <Route path='contact' element={<Contact />}/>
-        <Route path='shop' element={<Shop />}/>
-      </Routes>
+      <ShopFilterContext.Provider value={{selectedCategory, setSelectedCategory, allPlants, filteredPlants}}>
+        <Routes>
+          <Route index element={<Home />}/>
+          <Route path='shop' element={<Shop />}/>
+          <Route path='about' element={<About />}/>
+          <Route path='contact' element={<Contact />}/>   
+        </Routes>
+      </ShopFilterContext.Provider>
       <Footer />
     </>
   )

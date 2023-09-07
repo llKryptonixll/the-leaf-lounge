@@ -1,13 +1,11 @@
-import { React, useState } from 'react'
+import { React, useContext } from 'react'
 import ShopItem from './components/ShopItem'
-import data from '../../data.json';
 import { v4 as uuidv4 } from 'uuid';
+import ShopFilterContext from '../../context/ShopFilterContext';
 
 const Shop = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const allPlants = Object.values(data.plantsData).flat();
-  const filteredPlants = selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLocaleLowerCase()]
+  const { selectedCategory, setSelectedCategory, allPlants, filteredPlants } = useContext(ShopFilterContext);
 
   return (
     <main className='main_shop'>
