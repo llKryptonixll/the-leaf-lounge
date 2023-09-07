@@ -10,3 +10,4 @@ async function compressImages() {
 }
 
 export default gulp.series(compressImages);
+//test
