@@ -8,6 +8,7 @@ const ShopItem = ({name, price, image}) => {
         <p>{name}</p>
         <p>{price}$</p>
       </div>
+      <button className='add_to_cart_btn'><span>Add to Cart +</span></button>
     </div>
   )
 }
