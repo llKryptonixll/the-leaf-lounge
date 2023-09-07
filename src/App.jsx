@@ -1,5 +1,5 @@
 import './styles/main.scss'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import data from './data.json'
 import Navbar from './layout/Navbar'
@@ -12,6 +12,7 @@ import Contact from './pages/contact/Contact'
 import Shop from './pages/shop/Shop'
 import SidebarOpenContext from './context/SidebarOpenContext'
 import ShopFilterContext from './context/ShopFilterContext'
+import ShopItemsContext from './context/ShopItemsContext'
 
 
 function App() {
@@ -20,7 +21,18 @@ function App() {
   // shop item filter
   const [selectedCategory, setSelectedCategory] = useState("All");
   const allPlants = Object.values(data.plantsData).flat();
-  const filteredPlants = selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLocaleLowerCase()]
+  const filteredPlants = selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLocaleLowerCase()];
+
+  // add items into the cart
+  const [cartItems, setCartItems] = useState([]);
+
+    // get stored shop items from local storage
+    useEffect(() => {
+      const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      setCartItems(storedCartItems);
+    }, []); 
+    console.log(cartItems);
+  
 
   return (
     <>
@@ -30,12 +42,14 @@ function App() {
       </SidebarOpenContext.Provider>
 
       <ShopFilterContext.Provider value={{selectedCategory, setSelectedCategory, filteredPlants}}>
-        <Routes>
-          <Route index element={<Home />}/>
-          <Route path='shop' element={<Shop />}/>
-          <Route path='about' element={<About />}/>
-          <Route path='contact' element={<Contact />}/>   
-        </Routes>
+        <ShopItemsContext.Provider value={{setCartItems}}>
+          <Routes>
+            <Route index element={<Home />}/>
+            <Route path='shop' element={<Shop />}/>
+            <Route path='about' element={<About />}/>
+            <Route path='contact' element={<Contact />}/>   
+          </Routes>
+        </ShopItemsContext.Provider>
       </ShopFilterContext.Provider>
       <Footer />
     </>

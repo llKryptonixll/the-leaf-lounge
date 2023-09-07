@@ -39,6 +39,7 @@ const Shop = () => {
             return (
               <ShopItem 
                 key={uuidv4()}
+                item={plant}
                 name={plant.name}
                 price={plant.price}
                 image={plant.image}
