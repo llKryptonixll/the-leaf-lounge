@@ -1,19 +1,6 @@
 import { useState } from 'react'
 import data from "../../../data.json"
-
-const TeamComponent = ({ image, name, profession }) => {
-  return (
-    <div className='team_item_container'>
-      <div className='image_wrapper'>
-        <img src={image} alt="team-person-image" />
-      </div>
-      <div className='team_info_wrapper'>
-        <p>{name}</p>
-        <p>{profession}</p>
-      </div>
-    </div>
-  )
-}
+import TeamMembers from './TeamMembers'
 
 const About_team = () => {
 
@@ -34,7 +21,7 @@ const About_team = () => {
       <div className="team_container">
         {data.team_data.slice(0, rendercount).map((teamItem) => {
           return(
-            <TeamComponent 
+            <TeamMembers 
               key={teamItem.id}
               image={teamItem.image}
               name={teamItem.name}
