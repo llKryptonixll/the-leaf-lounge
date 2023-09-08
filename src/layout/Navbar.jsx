@@ -6,10 +6,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import SidebarOpenContext from '../context/SidebarOpenContext'
 import useCurrentLocation from '../hooks/useCurrentLocation'
 
-const navbar = () => {
+const Navbar = () => {
   const { getClassName } = useCurrentLocation();
   const [reachedTop, setReachedTop] = useState(true);
-  const { isOpen, setIsOpen } = useContext(SidebarOpenContext);
+  const { setIsOpen } = useContext(SidebarOpenContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,4 +57,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
