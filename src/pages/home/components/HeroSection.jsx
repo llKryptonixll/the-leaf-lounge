@@ -18,8 +18,8 @@ const HeroSection = () => {
           <p className='main_text'>
             Looking to enhance your indoor or outdoor space with vibrant foliage and captivating blooms? 
             Look no further than our premium plant shop! 
-            For a limited time only, we're thrilled to offer an exclusive discount of 20% off on all orders. 
-            Don't miss out on this incredible opportunity to cultivate your very own green oasis at unbeatable prices.
+            For a limited time only, we&apos;re thrilled to offer an exclusive discount of 20% off on all orders. 
+            Don&apos;t miss out on this incredible opportunity to cultivate your very own green oasis at unbeatable prices.
           </p>
         </div>
 

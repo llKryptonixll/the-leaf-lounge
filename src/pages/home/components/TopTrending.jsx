@@ -32,7 +32,7 @@ const TopTrending = () => {
           <img src="images/home-images/plant_icon3.webp" alt="icon" />
           <div className="text-container">
             <p>Plant Sentry</p>
-            <p>Ensure plant health and compliance with Plant Sentry's comprehensive monitoring.</p>
+            <p>Ensure plant health and compliance with Plant Sentry&apos;s comprehensive monitoring.</p>
           </div>
         </div>
         <div className="icon_wrapper">

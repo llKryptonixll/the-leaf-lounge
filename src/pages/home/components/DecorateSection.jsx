@@ -37,7 +37,7 @@ const DecorateSection = () => {
             </div>
             <div className='content_wrapper'>
               <p>Infuse your life with nature</p>
-              <p>Embrace nature's essence and enhance your life.</p>
+              <p>Embrace nature&apos;s essence and enhance your life.</p>
             </div>
           </li>
         </ul>
