@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TopTrending = () => {
   return (
     <section className='trending_section'>

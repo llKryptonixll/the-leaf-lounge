@@ -5,7 +5,6 @@ import Map, {
   FullscreenControl,
   GeolocateControl,
 } from "react-map-gl";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 

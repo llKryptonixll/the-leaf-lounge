@@ -1,4 +1,4 @@
-import { React, useContext } from 'react'
+import { useContext } from 'react'
 import ShopItem from './components/ShopItem'
 import { v4 as uuidv4 } from 'uuid';
 import ShopFilterContext from '../../context/ShopFilterContext';

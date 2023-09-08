@@ -1,4 +1,3 @@
-import React from 'react'
 import ContactHeader from './components/ContactHeader'
 import Mapbox from './components/Mapbox'
 import ContactForm from './components/ContactForm'

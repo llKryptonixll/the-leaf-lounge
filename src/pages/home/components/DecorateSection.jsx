@@ -1,5 +1,3 @@
-import React from 'react'
-
 const DecorateSection = () => {
   return (
     <section className="decorate_section">

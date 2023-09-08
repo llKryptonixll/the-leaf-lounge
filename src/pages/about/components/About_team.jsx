@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { useState } from 'react'
 import data from "../../../data.json"
 
 const TeamComponent = ({ image, name, profession }) => {

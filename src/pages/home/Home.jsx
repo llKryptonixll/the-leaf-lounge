@@ -1,4 +1,3 @@
-import React from 'react'
 import DecorateSection from './components/DecorateSection'
 import HeroSection from './components/HeroSection'
 import PlantCategories from './components/PlantCategories'

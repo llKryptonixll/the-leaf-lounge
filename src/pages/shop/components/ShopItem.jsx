@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import ShopItemsContext from '../../../context/ShopItemsContext';
 
 const ShopItem = ({ item, name, price, image }) => {

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const About_header = () => {
   return (
     <section className='about_header_section'>
