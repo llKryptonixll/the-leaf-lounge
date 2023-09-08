@@ -12,8 +12,8 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 const Mapbox = () => {
 
     const API_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
-    const [lng, setLng] = useState(-105.31581418746562);
-    const [lat, setLat] = useState(39.643772795122445);
+    const lng = -105.31581418746562;
+    const lat = 39.643772795122445;
 
     return (
         <section className='mapbox_section'>
