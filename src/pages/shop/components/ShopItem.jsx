@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import ShopItemsContext from '../../../context/ShopItemsContext';
 
 const ShopItem = ({ item, name, price, image }) => {
@@ -22,5 +23,12 @@ const ShopItem = ({ item, name, price, image }) => {
     </div>
   );
 }
+
+ShopItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+};
 
 export default ShopItem;
