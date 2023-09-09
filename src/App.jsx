@@ -14,21 +14,16 @@ import ShopFilterContext from './context/ShopFilterContext'
 import ShopItemsContext from './context/ShopItemsContext'
 
 function App() {
-  // Combine all imports into a single import statement for better performance.
-  // This reduces network requests and makes your code cleaner.
   const allPlants = useMemo(() => Object.values(data.plantsData).flat(), []);
-  
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [cartItems, setCartItems] = useState([]);
 
-  // Load stored cart items from local storage once during component initialization.
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(storedCartItems);
   }, []);
-
-  // Memoize the filtered plants based on selectedCategory.
+  
   const filteredPlants = useMemo(() => {
     return selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLowerCase()];
   }, [selectedCategory, allPlants]);
