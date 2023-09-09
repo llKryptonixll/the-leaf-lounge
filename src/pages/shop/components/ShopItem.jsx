@@ -1,8 +1,8 @@
-import { useContext } from 'react';
+import { useContext, memo } from 'react';
 import PropTypes from 'prop-types';
 import ShopItemsContext from '../../../context/ShopItemsContext';
 
-const ShopItem = ({ item, name, price, image }) => {
+const ShopItem = memo(({ item, name, price, image }) => {
   const { setCartItems } = useContext(ShopItemsContext);
 
   function addToCart() {
@@ -14,7 +14,7 @@ const ShopItem = ({ item, name, price, image }) => {
 
   return (
     <div className="item">
-      <img src={image} alt="product_image" />
+      <img loading='lazy' src={image} alt="product_image" />
       <div className="item_description">
         <p>{name}</p>
         <p>{price}$</p>
@@ -22,7 +22,7 @@ const ShopItem = ({ item, name, price, image }) => {
       <button onClick={addToCart} className='add_to_cart_btn'><span>Add to Cart +</span></button>
     </div>
   );
-}
+})
 
 ShopItem.propTypes = {
   item: PropTypes.object.isRequired,
