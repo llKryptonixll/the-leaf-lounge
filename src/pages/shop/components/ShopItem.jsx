@@ -5,12 +5,17 @@ import ShopItemsContext from '../../../context/ShopItemsContext';
 const ShopItem = memo(({ item, name, price, image }) => {
   const { setCartItems } = useContext(ShopItemsContext);
   const [isLoaded, setIsLoaded] = useState(false);
+  const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
   function addToCart() {
     setCartItems((prevItems) => [...prevItems, item]);
-    const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const updatedCartItems = [...existingCartItems, item];
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  }
+
+  function disableButton() {
+    // Check if any existing item has the same id as the current item
+    return existingCartItems.some((existingItem) => existingItem.id === item.id);
   }
 
   return (
@@ -31,7 +36,14 @@ const ShopItem = memo(({ item, name, price, image }) => {
               <p>{name}</p>
               <p>{price}$</p>
             </div>
-            <button onClick={addToCart} className='add_to_cart_btn'><span>Add to Cart +</span></button>
+            <div className='button_wrapper'>
+              <button 
+                disabled={disableButton()} 
+                onClick={addToCart}
+              >
+                {disableButton() ? "Already in Cart!" : "Add to Cart +"}
+              </button>
+            </div>
           </>
         )}
         {!isLoaded && (

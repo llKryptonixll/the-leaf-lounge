@@ -65,16 +65,19 @@
     "plantsData": {
         "succulents": [
             {
+                "id": "succulents_1",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/succulents/1.webp"
             },
             {
+                "id": "succulents_2",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/succulents/2.webp"
             },
             {
+                "id": "succulents_3",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/succulents/3.webp"
@@ -82,21 +85,25 @@
         ],
         "potter_plants": [
             {
+                "id": "potter_pants_1",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/potter plants/1.webp"
             },
             {
+                "id": "potter_pants_2",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/potter plants/2.webp"
             },
             {
+                "id": "potter_pants_3",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/potter plants/3.webp"
             },
             {
+                "id": "potter_pants_4",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/potter plants/4.webp"
@@ -104,6 +111,7 @@
         ],
         "terrariums": [
             {
+                "id": "terrariums_1",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/terrariums/1.webp"
@@ -111,36 +119,43 @@
         ],
         "small_plants": [
             {
+                "id": "small_plants_1",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/1.webp"
             },
             {
+                "id": "small_plants_2",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/2.webp"
             },
             {
+                "id": "small_plants_3",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/3.webp"
             },
             {
+                "id": "small_plants_4",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/4.webp"
             },
             {
+                "id": "small_plants_5",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/5.webp"
             },
             {
+                "id": "small_plants_6",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/6.webp"
             },
             {
+                "id": "small_plants_7",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/small plants/7.webp"
@@ -148,16 +163,19 @@
         ],
         "cactuses": [
             {
+                "id": "cactuses_1",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/cactuses/1.webp"
             },
             {
+                "id": "cactuses_2",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/cactuses/2.webp"
             },
             {
+                "id": "cactuses_3",
                 "name": "cool plant",
                 "price": 27.5,
                 "image": "images/shop-images/cactuses/3.webp"

@@ -40,6 +40,7 @@ const Shop = () => {
               <ShopItem 
                 key={uuidv4()}
                 item={plant}
+                id={plant.id}
                 name={plant.name}
                 price={plant.price}
                 image={plant.image}

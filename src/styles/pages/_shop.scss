@@ -76,14 +76,18 @@
                     .item_description{
                         text-align: center;
                     }
-                    .add_to_cart_btn{
+                    .button_wrapper{
                         width: 100%;
-                        display: grid;
-                        place-items: center;
-    
-                        span {
-                            display: grid;
-                            place-items: center;
+                        @include grid-center;
+                        button:disabled{
+                            background-color: $gray-color;
+                            cursor: not-allowed;
+                        }
+                        button:disabled::before,
+                        button:disabled::after {
+                          background-color: transparent;
+                        }
+                        button {
                             color: $soft-white-color;
                             position: relative;
                             width: 130px;
@@ -92,8 +96,8 @@
                             overflow: hidden;
                             margin-top: 10px;
                         }
-                        span::before,
-                        span::after {
+                        button::before,
+                        button::after {
                         content: '';
                             position: absolute;
                             width: 0;
@@ -101,18 +105,18 @@
                             background-color: $light-green;
                             transition: width 0.3s ease-in-out;
                         }  
-                        span::before {
+                        button::before {
                             top: 0;
                             right: 0;
                             transform-origin: right;
                         }
-                        span::after {
+                        button::after {
                             bottom: 0;
                             left: 0;
                             transform-origin: left;
                         }
-                        span:hover::before,
-                        span:hover::after {
+                        button:hover::before,
+                        button:hover::after {
                             width: 100%;
                         }
                     }
