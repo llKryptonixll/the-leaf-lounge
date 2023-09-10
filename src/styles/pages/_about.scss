@@ -94,6 +94,9 @@
             color: $black-color;
             padding: 10px 20px;
         }
+        .view_more_btn:disabled{
+            display: none;
+        }
         .view_more_btn::before, .view_more_btn::after {
             content: "";
             background-color: $dark-green;

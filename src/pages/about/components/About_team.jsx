@@ -5,6 +5,7 @@ import TeamMembers from './TeamMembers'
 const About_team = () => {
 
   const [rendercount, setRenderCount] = useState(3);
+  console.log(rendercount);
 
   function updateRenderCount() {
     if (rendercount < 10) {
@@ -30,7 +31,7 @@ const About_team = () => {
           )
         })}
       </div>
-      <button onClick={updateRenderCount} className='view_more_btn'>View more</button>
+      <button disabled={rendercount > 10} onClick={updateRenderCount} className='view_more_btn'>View more</button>
     </section>
   )
 }
