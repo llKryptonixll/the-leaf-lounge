@@ -45,10 +45,10 @@ const Navbar = () => {
         </ul>
 
         <div className='btn_container'>
-          <button onClick={() => setIsOpen(true)} className='bars_icon'>
+          <button aria-label='open-mobile-navigation' onClick={() => setIsOpen(true)} className='bars_icon'>
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <button className='cart_icon'>
+          <button aria-label='open-shopping-cart' className='cart_icon'>
             <FontAwesomeIcon icon={faShoppingCart} />
           </button>
         </div>
