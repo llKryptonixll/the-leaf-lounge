@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import ShopItem from './components/ShopItem'
-import { v4 as uuidv4 } from 'uuid';
 import ShopFilterContext from '../../context/ShopFilterContext';
 
 const Shop = () => {
@@ -38,7 +37,7 @@ const Shop = () => {
           {filteredPlants.map((plant) => {
             return (
               <ShopItem 
-                key={uuidv4()}
+                key={plant.id}
                 item={plant}
                 id={plant.id}
                 name={plant.name}
