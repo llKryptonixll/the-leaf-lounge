@@ -2,21 +2,18 @@ import { useContext, memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import ShopItemsContext from '../../../context/ShopItemsContext';
 
-const ShopItem = memo(({ item, name, price, image }) => {
-  const { setCartItems } = useContext(ShopItemsContext);
+const ShopItem = memo(({ item, name, price, image, setIsOpen, setCurrentItem, quantity }) => {
+  const { addToCart } = useContext(ShopItemsContext);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  function handleImageClick() {
+    setIsOpen(true);
+    setCurrentItem(item)
+  }
 
   const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-  function addToCart() {
-    setCartItems((prevItems) => [...prevItems, item]);
-    const updatedCartItems = [...existingCartItems, item];
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  }
-  //localStorage.clear("cartItems")
-
   function disableButton() {
-    // Check if any existing item has the same id as the current item
     return existingCartItems.some((existingItem) => existingItem.id === item.id);
   }
 
@@ -25,6 +22,7 @@ const ShopItem = memo(({ item, name, price, image }) => {
       {!isLoaded && <div className='image_loader'></div>}
       <img
         onLoad={() => setIsLoaded(true)}
+        onClick={handleImageClick}
         loading='lazy'
         src={image}
         alt="product_image"
@@ -39,7 +37,7 @@ const ShopItem = memo(({ item, name, price, image }) => {
             <div className='button_wrapper'>
               <button
                 disabled={disableButton()}
-                onClick={addToCart}
+                onClick={() => addToCart(item, quantity)}
               >
                 {disableButton() ? "Already in Cart!" : "Add to Cart +"}
               </button>

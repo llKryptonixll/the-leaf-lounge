@@ -1,10 +1,13 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import ShopItem from './components/ShopItem'
+import ShopItemDescription from './components/ShopItemDescription';
 import ShopFilterContext from '../../context/ShopFilterContext';
 
 const Shop = () => {
 
   const { selectedCategory, setSelectedCategory, filteredPlants } = useContext(ShopFilterContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState("");
 
   return (
     <main className='main_shop'>
@@ -43,10 +46,17 @@ const Shop = () => {
                 name={plant.name}
                 price={plant.price}
                 image={plant.image}
+                setIsOpen={setIsOpen}
+                setCurrentItem={setCurrentItem}
               />
             ) 
           })}
         </div>
+        <ShopItemDescription 
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          currentItem={currentItem}
+        />
       </section>
     </main>
   )

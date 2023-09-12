@@ -20,12 +20,46 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [cartItems, setCartItems] = useState([]);
+  const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const [quantity, setQuantity] = useState(1);
+console.log(quantity, cartItems);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(storedCartItems);
   }, []);
+
+  function incrementQuantity() {
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
+
+  function decrementQuantity() {
+    setQuantity((prevQuantity) => prevQuantity - 1)
+  }
   
+
+  function addToCart(shopItem) {
+    if (existingCartItems.some((existingItem) => existingItem.id === shopItem.id)) {
+      // If the item is already in the cart, update its quantity
+      const updatedCartItems = existingCartItems.map((existingItem) => {
+        if (existingItem.id === shopItem.id) {
+          existingItem.quantity += quantity;
+        }
+        return existingItem;
+      });
+      setCartItems(updatedCartItems);
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    } else {
+      // If the item is not in the cart, add it with the specified quantity
+      const newItem = { ...shopItem, quantity };
+      setCartItems((prevItems) => [...prevItems, newItem]);
+      const updatedCartItems = [...existingCartItems, newItem];
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    }
+    // reset quantity att the end to avoid wrong quantity
+    setQuantity(1)
+  }
+
   const filteredPlants = useMemo(() => {
     return selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLowerCase()];
   }, [selectedCategory, allPlants]);
@@ -38,7 +72,7 @@ function App() {
       </SidebarOpenContext.Provider>
 
       <ShopFilterContext.Provider value={{ selectedCategory, setSelectedCategory, filteredPlants }}>
-        <ShopItemsContext.Provider value={{ setCartItems }}>
+        <ShopItemsContext.Provider value={{ addToCart, quantity, incrementQuantity, decrementQuantity }}>
           <Routes>
             <Route index element={<Home />} />
             <Route path='shop' element={<Shop />} />

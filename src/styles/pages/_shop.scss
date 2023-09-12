@@ -55,8 +55,10 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    cursor: pointer;
                 }
                 .item_text_wrapper{
+                    @include add-to-cart-btn;
                     position: relative;
                     .text_loader{
                         position: absolute;
@@ -76,50 +78,7 @@
                     .item_description{
                         text-align: center;
                     }
-                    .button_wrapper{
-                        width: 100%;
-                        @include grid-center;
-                        button:disabled{
-                            background-color: $gray-color;
-                            cursor: not-allowed;
-                        }
-                        button:disabled::before,
-                        button:disabled::after {
-                          background-color: transparent;
-                        }
-                        button {
-                            color: $soft-white-color;
-                            position: relative;
-                            width: 130px;
-                            height: 40px;
-                            background-color: $dark-green;
-                            overflow: hidden;
-                            margin-top: 10px;
-                        }
-                        button::before,
-                        button::after {
-                        content: '';
-                            position: absolute;
-                            width: 0;
-                            height: 3px;
-                            background-color: $light-green;
-                            transition: width 0.3s ease-in-out;
-                        }  
-                        button::before {
-                            top: 0;
-                            right: 0;
-                            transform-origin: right;
-                        }
-                        button::after {
-                            bottom: 0;
-                            left: 0;
-                            transform-origin: left;
-                        }
-                        button:hover::before,
-                        button:hover::after {
-                            width: 100%;
-                        }
-                    }
+      
                 }
 
                 @keyframes loading {
@@ -133,6 +92,80 @@
             }
         }
 
+        .item_description_container{
+            @include grid-center;
+            @include padding-gap;
+            position: fixed;   
+            overflow-y: auto;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            min-height: fit-content;
+            padding-top: 50px;
+            top: 0;
+            z-index: 5;
+            left: -100%;
+            background-color: $soft-white-color;
+            transition: 250ms;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 40px;
+
+            nav{
+                @include padding-gap;
+                display: grid;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100px;
+                width: 100px;
+
+                button{
+                    font-size: 1.5rem;
+                    color: $light-green;
+                    border: 1px solid $dark-green;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    transition: 200ms;
+                }
+                button:hover{
+                    background-color: $light-green;
+                    color: $soft-white-color;
+                    transition: 200ms;
+                }
+            }
+            .image_container {
+                width: 100%;
+                height: 100%;
+                @include grid-center;
+              
+                img {
+                  width: 70%;
+                  height: 60%;
+                }
+              }
+            .content_container{
+                @include add-to-cart-btn;
+                display: grid;
+                gap: 30px;
+                align-content: center;
+
+                .quantity{
+                    display: flex;
+                }
+                .add_to_cart_btn_2{
+                    justify-self: left;
+                }
+            }
+        }
+        .description_isopen{
+            opacity: 1;
+            transform: translateX(100%);
+            transition: 250ms;
+        }
+
+
         @media (max-width: 1440px) {
             .shop_items_container{
                 margin-bottom: 80px;
@@ -142,6 +175,26 @@
         @media (max-width: 1024px) {
             .shop_items_container{
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .item_description_container{
+                grid-template-columns: 100%;
+
+                .image_container{
+                    width: 100%;
+                    height: 100%;
+                    justify-items: left;
+                    img{
+                        width: clamp(50%, 70vw, 100%);
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+                .content_container{
+                    align-content: center;
+                    padding-bottom: 50px;
+                    padding-top: 50px;
+                }
             }
         }
         @media (max-width: 650px) {
@@ -155,6 +208,14 @@
     
                     .filter_item{
                         margin-left: 0;
+                    }
+                }
+            }
+
+            .item_description_container{
+                .image_container{
+                    img{
+                        width: 100%;
                     }
                 }
             }

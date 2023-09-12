@@ -5,7 +5,6 @@ import TeamMembers from './TeamMembers'
 const About_team = () => {
 
   const [rendercount, setRenderCount] = useState(3);
-  console.log(rendercount);
 
   function updateRenderCount() {
     if (rendercount < 10) {
