@@ -7,6 +7,7 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
 
     const { addToCart, quantity, incrementQuantity, decrementQuantity } = useContext(ShopItemsContext);
     const { image, name, price } = currentItem;
+    isOpen === true ? document.body.style.overflowY = "hidden" : document.body.style.overflowY;
 
     return (
         <div className={`${isOpen === true ? "description_isopen" : ""} item_description_container`}>

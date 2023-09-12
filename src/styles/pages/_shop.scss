@@ -95,7 +95,7 @@
         .item_description_container{
             @include grid-center;
             @include padding-gap;
-            position: fixed;   
+            position: absolute;   
             overflow-y: auto;
             opacity: 0;
             width: 100%;
