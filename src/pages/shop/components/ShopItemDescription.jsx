@@ -12,7 +12,7 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
     return (
         <div className={`${isOpen === true ? "description_isopen" : ""} item_description_container`}>
             <nav>
-                <button onClick={() => setIsOpen(false)}>
+                <button aria-label="back-to-shop" onClick={() => setIsOpen(false)}>
                     <FontAwesomeIcon icon={faArrowLeft}/>
                 </button>
             </nav>
