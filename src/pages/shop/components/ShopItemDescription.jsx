@@ -31,9 +31,9 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
                 <div className="quantity">
                     <p>QUANTITY</p>
                     <div className="counter_container">
-                        <button onClick={incrementQuantity} aria-label="increment-quantity">+</button>
-                        <span>{quantity}</span>
                         <button onClick={decrementQuantity} aria-label="decrement-quantity">-</button>
+                        <span>{quantity}</span>
+                        <button onClick={incrementQuantity} aria-label="increment-quantity">+</button>
                     </div>
                 </div>
                 <div className="button_wrapper">

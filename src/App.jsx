@@ -11,18 +11,14 @@ import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
 import Shop from './pages/shop/Shop'
 
-import SidebarOpenContext from './context/SidebarOpenContext'
-import ShopFilterContext from './context/ShopFilterContext'
+import { SidebarOpenProvider } from './context/SidebarOpenContext';
+import { ShopFilterProvider } from './context/ShopFilterContext'
 import ShopItemsContext from './context/ShopItemsContext'
 
 function App() {
-  const allPlants = useMemo(() => Object.values(data.plantsData).flat(), []);
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [cartItems, setCartItems] = useState([]);
   const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
   const [quantity, setQuantity] = useState(1);
-console.log(quantity, cartItems);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -36,6 +32,8 @@ console.log(quantity, cartItems);
   function decrementQuantity() {
     setQuantity((prevQuantity) => prevQuantity - 1)
   }
+
+  console.log(cartItems);
   
 
   function addToCart(shopItem) {
@@ -60,18 +58,15 @@ console.log(quantity, cartItems);
     setQuantity(1)
   }
 
-  const filteredPlants = useMemo(() => {
-    return selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLowerCase()];
-  }, [selectedCategory, allPlants]);
 
   return (
     <>
-      <SidebarOpenContext.Provider value={{ isOpen, setIsOpen }}>
+      <SidebarOpenProvider>
         <Navbar />
         <Sidebar />
-      </SidebarOpenContext.Provider>
+      </SidebarOpenProvider>
 
-      <ShopFilterContext.Provider value={{ selectedCategory, setSelectedCategory, filteredPlants }}>
+      <ShopFilterProvider>
         <ShopItemsContext.Provider value={{ addToCart, quantity, incrementQuantity, decrementQuantity }}>
           <Routes>
             <Route index element={<Home />} />
@@ -80,7 +75,7 @@ console.log(quantity, cartItems);
             <Route path='contact' element={<Contact />} />
           </Routes>
         </ShopItemsContext.Provider>
-      </ShopFilterContext.Provider>
+      </ShopFilterProvider>
       <Footer />
     </>
   )
