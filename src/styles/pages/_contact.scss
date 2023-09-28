@@ -25,7 +25,6 @@
                 @include grid-center-content;
                 gap: 20px;
                 text-align: center;
-                
 
                 p:nth-child(1){
                     color: $black-color;
@@ -44,20 +43,28 @@
                 grid-template-columns: repeat(3, 1fr);
                 border-top: 1px solid $gray-color;
                 padding-top: 50px;
-
+                .detail_item_wrapper{
+                    .icon{
+                        font-size: 3rem;
+                    }
+                    .detail_text_wrapper{
+                        font-size: 0.9rem;
+                    }
+                }
                 .detail_item_wrapper{
                     display: flex;
                     align-items: center;
                     width: 100%;
 
                     .icon{
-                        font-size: 4rem;
+                        font-size: clamp(1rem, 12vw, 4rem);
                         color: $light-green;
                     }
                     .detail_text_wrapper{
                         display: grid;
                         margin-left: 20px;
                         font-weight: 600;
+                        font-size: 1rem;
 
                         span:nth-child(1){
                             color: $light-green;
@@ -134,7 +141,7 @@
             }
             input, textarea{
                 border: none;
-                background-color: #ececec;
+                background-color: hsl(0, 0%, 93%);
                 outline-color: $light-green;
                 padding-left: 15px;  
             }
@@ -159,21 +166,25 @@
                 height: 50px;
                 color: $soft-white-color;
                 font-size: 1rem;
-            }
-            .submit_button::after{
-                content: '';
-                z-index: -1;
-                position: absolute;
-                left: 0;
-                top: 0;
-                background-color: $light-green;
-                width: 0;
-                height: 100%;
-                transition: 250ms;
-            }
-            .submit_button:hover::after{
-                width: 100%;
-                transition: 250ms;
+
+                &::after{
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-color: $light-green;
+                    width: 0;
+                    height: 100%;
+                    transition: 250ms;
+                }
+
+                &:hover{
+                    &::after{
+                        width: 100%;
+                        transition: 250ms;
+                    }
+                }
             }
         }
 
@@ -221,23 +232,4 @@
             }
         }
     }
-}
-
-@media (max-width: 425px){
-    .main_contact{
-        .form_header_section{
-            .main_content_container{
-                .contact_details_container{
-                    .detail_item_wrapper{
-                        .icon{
-                            font-size: 3rem;
-                        }
-                        .detail_text_wrapper{
-                            font-size: 0.9rem;
-                        }
-                    }
-                }
-            }
-        }
-    }  
 }

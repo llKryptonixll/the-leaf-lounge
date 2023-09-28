@@ -1,37 +1,35 @@
-footer{
+footer {
+    @include grid-center;
     background-color: $soft-white-color;
     min-height: 500px;
     grid-template-rows: 90% 10%;
-    @include grid-center;
 
-    .main_container{
+    .main_container {
         @include padding-gap;
         display: flex;
         justify-content: center;
 
-        .general_wrapper{
+        .general_wrapper {
             display: grid;
             gap: 10px;
 
-            p{
+            p {
                 color: $gray-color;
                 width: 450px;
             }
-            .social_links_list{
+            .social_links_list {
                 display: flex;
-                
-                li:nth-child(1){
-                    margin-left: 0;
-                }
-                li{
+                li:not(li:nth-child(1)) {
                     margin-left: 20px;
-                    .link{
-                        .icon{
+                }
+                li {
+                    .link {
+                        .icon {
                             color: $gray-color;
                             font-size: 1.3rem;
                             transition: 250ms;
                         }
-                        .icon:hover{
+                        .icon:hover {
                             color: $dark-green;
                             transition: 250ms;
                         }
@@ -39,32 +37,35 @@ footer{
                 }
             }
 
-            .hotline_container{
-                span:nth-child(1){
-                    font-size: 1.3rem;
+            .hotline_container {
+                span:nth-child(1) {
+                    font-size: clamp(1.2rem, 5vw, 1.3rem);
                     color: $dark-green;
                     margin-right: 10px;
                 }
-                span:nth-child(2){
-                    font-size: 1.4rem;
+                span:nth-child(2) {
+                    font-size: clamp(1.1rem, 5vw, 1.4rem);
                     color: $black-color;
                 }
             }
         }
 
-        .footer_list_wrapper{
+        .footer_list_wrapper {
+            width: 100%;
             display: flex;
 
-            .overview_list, .resources_list, .location_list{
+            .overview_list,
+            .resources_list,
+            .location_list {
                 margin-left: 50px;
                 display: grid;
                 align-content: start;
                 gap: 5px;
 
-                li, .component_links{
+                :is(li, .component_links){
                     color: $gray-color;
                 }
-                .list_header{
+                .list_header {
                     font-size: 1.1rem;
                     margin-bottom: 20px;
                     font-weight: 600;
@@ -74,76 +75,61 @@ footer{
         }
     }
 
-    .bottom_container{
+    .bottom_container {
         @include grid-center;
         background-color: $dark-green;
         width: 100%;
         height: 100%;
         color: $soft-white-color;
     }
-}
 
-@media (max-width: 1200px) {
-    footer{
-        .main_container{
+    @media (max-width: 1200px) {
+        .main_container {
             @include padding-gap;
             @include grid-center;
             gap: 50px;
             padding-top: 50px;
             padding-bottom: 50px;
-    
-            .general_wrapper{
+
+            .general_wrapper {
                 display: grid;
                 justify-items: center;
                 text-align: center;
-    
-                p{
+
+                p {
                     color: $gray-color;
                     width: auto;
                 }
             }
         }
     }
-}
 
-@media (max-width: 630px) {
-    footer{
-        .main_container{
+    @media (max-width: 630px) {
+        .main_container {
             @include padding-gap;
             @include grid-center;
             gap: 50px;
             padding-top: 70px;
             padding-bottom: 70px;
-    
-            .general_wrapper{
+
+            .general_wrapper {
                 display: grid;
                 justify-items: center;
                 text-align: center;
-    
-                p{
+
+                p {
                     color: $gray-color;
                     width: auto;
                 }
-
-                .hotline_container{
-                    span:nth-child(1){
-                        font-size: 1.2rem;
-                    }
-                    span:nth-child(2){
-                        font-size: 1.3rem;
-                    }
-                }
-                
             }
 
-            .footer_list_wrapper{
+            .footer_list_wrapper {
                 @include grid-center;
                 gap: 50px;
                 text-align: center;
-                .overview_list, .resources_list, .location_list{
+                :is(.overview_list, .resources_list, .location_list) {
                     margin-left: 0;
-
-                    .list_header{
+                    .list_header {
                         margin-bottom: 10px;
                     }
                 }

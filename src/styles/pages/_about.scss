@@ -1,7 +1,7 @@
-.about_main{
+.about_main {
     @include padding-gap;
 
-    .about_header_section{
+    .about_header_section {
         @include grid-center;
         grid-template-columns: repeat(2, 1fr);
         position: relative;
@@ -9,49 +9,49 @@
         height: calc(100vh - 90px);
         min-height: 700px;
 
-        .text_wrapper{
+        .text_wrapper {
             display: grid;
             gap: 10px;
             justify-self: self-start;
 
-            p:nth-child(1){
+            p:nth-child(1) {
                 color: $dark-green;
                 font-weight: 600;
                 font-size: clamp(1.2rem, 4vw, 2.5rem);
             }
-            p:nth-child(2){
+            p:nth-child(2) {
                 color: $gray-color;
                 width: 600px;
             }
-            p:nth-child(3){
+            p:nth-child(3) {
                 color: $light-green;
             }
         }
 
-        .image_wrapper{
+        .image_wrapper {
             display: grid;
             justify-items: end;
             align-items: center;
             width: 100%;
-            img{
+            img {
                 width: 100%;
                 object-fit: cover;
             }
         }
     }
 
-    .about_team_section{
+    .about_team_section {
         @include grid-center;
         margin-top: 200px;
         text-align: center;
         gap: 50px;
 
-        .header{
-            p:nth-child(1){
-                font-family: 'Libre Baskerville', serif;
+        .header {
+            p:nth-child(1) {
+                font-family: "Libre Baskerville", serif;
                 color: $light-green;
             }
-            p:nth-child(2){
+            p:nth-child(2) {
                 color: $dark-green;
                 font-weight: 600;
                 font-size: clamp(1.2rem, 4vw, 2rem);
@@ -59,46 +59,35 @@
             }
         }
 
-        .team_container{
+        .team_container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             row-gap: 20px;
 
-            .team_item_container{
-                .image_wrapper{
+            .team_item_container {
+                .image_wrapper {
                     width: 100%;
-                    img{
+                    img {
                         width: 100%;
                         height: auto;
                         object-fit: cover;
                     }
                 }
-                .team_info_wrapper{
-                    p:nth-child(1){
+                .team_info_wrapper {
+                    p:nth-child(1) {
                         font-size: 1.5rem;
                         color: $dark-green;
                         font-weight: 600;
                     }
-                    p:nth-child(2){
-                        font-family: 'Libre Baskerville', serif;
+                    p:nth-child(2) {
+                        font-family: "Libre Baskerville", serif;
                         color: $light-green;
                     }
                 }
             }
         }
 
-        .view_more_btn {
-            position: relative;
-            font-size: 0.9rem;
-            border-right: 2px solid $dark-green;
-            border-left: 2px solid $dark-green;
-            color: $black-color;
-            padding: 10px 20px;
-        }
-        .view_more_btn:disabled{
-            display: none;
-        }
-        .view_more_btn::before, .view_more_btn::after {
+        %button-base {
             content: "";
             background-color: $dark-green;
             width: 0;
@@ -108,42 +97,63 @@
             z-index: -1;
             transition: 250ms ease;
         }
-        .view_more_btn::before{
-            left: -2px;
-        }
-        .view_more_btn::after {
-            right: -2px;
-        }
 
-        .view_more_btn:hover::before, .view_more_btn:hover::after{
-            width: calc(50% + 2px);
-            transition: 250ms ease;
-        }
-        .view_more_btn:hover{
-            color: $soft-white-color;
+        .view_more_btn {
+            position: relative;
+            font-size: 0.9rem;
+            border-right: 2px solid $dark-green;
+            border-left: 2px solid $dark-green;
+            color: $black-color;
+            padding: 10px 20px;
+
+            &:disabled {
+                display: none;
+            }
+
+            &::before,
+            &::after {
+                @extend %button-base;
+            }
+
+            &::before {
+                left: -2px;
+            }
+
+            &::after {
+                right: -2px;
+            }
+
+            &:hover {
+                color: $soft-white-color;
+                &::before,
+                &::after {
+                    width: calc(50% + 2px);
+                    transition: 250ms ease;
+                }
+            }
         }
     }
 }
 
 @media (max-width: 1250px) {
-    .about_main{
-        .about_header_section{
+    .about_main {
+        .about_header_section {
             margin-top: 20px;
             margin-bottom: 200px;
             grid-template-columns: 100%;
             gap: 50px;
             height: min-content;
 
-            .text_wrapper{
-                p:nth-child(2){
+            .text_wrapper {
+                p:nth-child(2) {
                     color: $gray-color;
                     width: 100%;
                 }
             }
 
-            .image_wrapper{
+            .image_wrapper {
                 justify-items: center;
-                img{
+                img {
                     object-fit: cover;
                     width: 70%;
                     height: auto;
@@ -154,35 +164,35 @@
 }
 
 @media (max-width: 1024px) {
-    .about_main{
-        .about_team_section{
-            .team_container{
+    .about_main {
+        .about_team_section {
+            .team_container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-    } 
+    }
 }
 
 @media (max-width: 550px) {
-    .about_main{
-        .about_team_section{
-            .header{
-                p:nth-child(2){
+    .about_main {
+        .about_team_section {
+            .header {
+                p:nth-child(2) {
                     width: 100%;
                 }
             }
-            .team_container{
+            .team_container {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
-    } 
+    }
 }
 
 @media (max-width: 425px) {
-    .about_main{
-        .about_header_section{
-            .image_wrapper{
-                img{
+    .about_main {
+        .about_header_section {
+            .image_wrapper {
+                img {
                     width: 100%;
                 }
             }

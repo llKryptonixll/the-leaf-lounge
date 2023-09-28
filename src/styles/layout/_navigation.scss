@@ -1,6 +1,6 @@
-.desktop_nav{
-    position: fixed;
+.desktop_nav {
     @include padding-gap;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 4;
@@ -9,30 +9,30 @@
     align-items: center;
     height: 90px;
     transition: 500ms;
-    
-    .link_list{
+
+    .link_list {
         display: flex;
 
-        .list_item:nth-child(1){
+        .list_item:nth-child(1) {
             margin-left: 0;
         }
-        .list_item{
+        .list_item {
             margin-left: 15px;
-            .link{
+            .link {
                 font-weight: 600;
             }
         }
     }
 
-    .btn_container{
+    .btn_container {
         @include flex-center;
-        .bars_icon{
+        .bars_icon {
             margin-right: 10px;
             font-size: 1rem;
             color: $black-color;
             display: none;
         }
-        .cart_icon{
+        .cart_icon {
             background-color: $light-green;
             border-radius: 50%;
             width: 35px;
@@ -40,10 +40,27 @@
             color: $soft-white-color;
         }
     }
+
+    @media (max-width: 820px) {
+        .link_list {
+            display: none;
+        }
+
+        .btn_container {
+            .bars_icon {
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 425px) {
+        .logo {
+            width: 150px;
+        }
+    }
 }
 
-
-.mobile_sidebar{
+.mobile_sidebar {
     background-color: $soft-white-color;
     position: fixed;
     z-index: 4;
@@ -53,11 +70,11 @@
     height: 100%;
     transition: 250ms;
 
-    nav{
+    nav {
         display: grid;
         gap: 40px;
 
-        button{
+        button {
             background-color: $dark-green;
             height: 50px;
             display: flex;
@@ -66,22 +83,23 @@
             padding-right: 20px;
             color: $soft-white-color;
 
-            .x_icon{
+            .x_icon {
                 margin-left: 10px;
                 margin-bottom: 2px;
                 font-size: 1.2rem;
             }
         }
 
-        .link_list{
+        .link_list {
             padding-left: 20px;
             padding-right: 20px;
             display: grid;
             gap: 20px;
-            .list_item{
+
+            .list_item {
                 border-bottom: 1px solid $gray-color;
                 padding-bottom: 10px;
-                .link{
+                .link {
                     display: flex;
                     justify-content: space-between;
                     color: $black-color;
@@ -91,48 +109,27 @@
     }
 }
 
-@media (max-width: 820px) {
-    .desktop_nav{
-        .link_list{
-            display: none;
-        }
-
-        .btn_container{
-            .bars_icon{
-                display: flex;
-            }
-        }
-    }
-
-}
-
 @media (max-width: 500px) {
-    .mobile_sidebar{
+    .mobile_sidebar {
         width: 100%;
         left: -100%;
     }
 }
 
-@media (max-width: 425px) {
-    .logo{
-        width: 150px;
-    }
-}
-
-.addNav_BG{
-    background-color: rgba(195, 226, 207, 0.356);
+.addNav_BG {
+    background-color: hsla(143, 35%, 83%, 0.356);
     transition: 500ms;
 }
-.sidebarOpen{
+.sidebarOpen {
     left: 0;
     transition: 250ms;
 }
-.activePath{
+.activePath {
     color: $dark-green;
     letter-spacing: 2px;
     transition: 250ms;
 }
-.notActivePath{
+.notActivePath {
     color: $black-color;
     transition: 250ms;
 }

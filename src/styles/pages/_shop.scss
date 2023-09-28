@@ -13,10 +13,7 @@
                 display: flex;
                 justify-self: left;
 
-                .filter_item:nth-child(1){
-                    margin-left: 0;
-                }
-                .filter_item:nth-child(2){
+                .filter_item:nth-child(1), .filter_item:nth-child(2){
                     margin-left: 0;
                 }
                 .filter_item{
