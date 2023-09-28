@@ -1,31 +1,32 @@
-.main_shop{
-    .shop_section{
+.main_shop {
+    .shop_section {
         @include padding-gap;
         margin-top: 150px;
-        .header{
+        .header {
             font-size: 2rem;
             font-weight: 600;
             color: $black-color;
         }
 
-        .shop_filter{
-            .filter_list{
+        .shop_filter {
+            .filter_list {
                 display: flex;
                 justify-self: left;
 
-                .filter_item:nth-child(1), .filter_item:nth-child(2){
+                .filter_item:nth-child(1),
+                .filter_item:nth-child(2) {
                     margin-left: 0;
                 }
-                .filter_item{
+                .filter_item {
                     margin-left: 20px;
                     min-width: 48px;
                     min-height: 48px;
 
-                    button{
+                    button {
                         color: $black-color;
                         font-size: 1rem;
-                    }  
-                    .activeButton{
+                    }
+                    .activeButton {
                         transition: 250ms;
                         color: $dark-green;
                         font-weight: 600;
@@ -35,36 +36,36 @@
             }
         }
 
-        .shop_items_container{
+        .shop_items_container {
             margin-top: 50px;
             display: grid;
             column-gap: 50px;
             grid-template-columns: repeat(4, 1fr);
 
-            .item{
+            .item {
                 width: 100%;
                 height: 420px;
                 margin-bottom: 150px;
                 position: relative;
-                .image_loader{
+                .image_loader {
                     position: absolute;
                     width: 100%;
                     height: 100%;
                     animation: loading 1.5s linear infinite alternate;
                 }
-                .showImage{
+                .showImage {
                     display: block;
                 }
-                img{
+                img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     cursor: pointer;
                 }
-                .item_text_wrapper{
+                .item_text_wrapper {
                     @include add-to-cart-btn;
                     position: relative;
-                    .text_loader{
+                    .text_loader {
                         position: absolute;
                         z-index: 5;
                         width: 100%;
@@ -72,34 +73,33 @@
                         display: grid;
                         gap: 10px;
                         margin-top: 5px;
-                        span{
+                        span {
                             width: 100%;
                             height: 10px;
                             display: block;
                             animation: loading 1.5s linear infinite alternate;
                         }
                     }
-                    .item_description{
+                    .item_description {
                         text-align: center;
                     }
-      
                 }
 
                 @keyframes loading {
                     0% {
-                      background-color: hsl(200, 20%, 70%);
+                        background-color: hsl(200, 20%, 70%);
                     }
                     100% {
-                      background-color: hsl(200, 20%, 95%);
+                        background-color: hsl(200, 20%, 95%);
                     }
                 }
             }
         }
 
-        .item_description_container{
+        .item_description_container {
             @include grid-center;
             @include padding-gap;
-            position: fixed;   
+            position: fixed;
             overflow-y: auto;
             opacity: 0;
             width: 100%;
@@ -111,19 +111,19 @@
             background-color: $soft-white-color;
             transition: 250ms;
             grid-template-columns: repeat(2, 1fr);
-            column-gap: 40px;
+            grid-template-rows: 90% 100px;
 
-            nav{
+            nav {
                 @include padding-gap;
                 display: grid;
                 align-items: center;
                 position: absolute;
-                top: 0;
+                top: 25px;
                 left: 0;
                 height: 100px;
                 width: 100px;
 
-                button{
+                button {
                     font-size: 1.5rem;
                     color: $light-green;
                     border: 1px solid $dark-green;
@@ -132,7 +132,7 @@
                     border-radius: 50%;
                     transition: 200ms;
 
-                    &:hover{
+                    &:hover {
                         background-color: $light-green;
                         color: $soft-white-color;
                         transition: 200ms;
@@ -140,110 +140,140 @@
                 }
             }
             .image_container {
-                width: 100%;
-                height: 100%;
-                @include grid-center;
-              
+                width: 90%;
+                height: 90%;
+                display: grid;
+                justify-self: left;
+                align-items: center;
+                position: relative;
+
                 img {
-                  width: 70%;
-                  height: 60%;
+                    width: 100%;
+                    height: 80%;
+                    position: absolute
                 }
-              }
-            .content_container{
+            }
+            .content_container {
                 @include add-to-cart-btn;
                 display: grid;
                 gap: 30px;
                 align-content: center;
 
-                .quantity{
-                    display: flex; 
+                .description {
+                    color: $gray-color;
+                }
+
+                .quantity {
+                    display: flex;
                     align-items: center;
-                    p{
+                    p {
                         margin-right: 10px;
                     }
-                    .counter_container{
+                    .counter_container {
                         @include flex-center;
                         background-color: $light-green;
                         color: $black-color;
                         border-radius: 2px;
-                        
-                        button{
+
+                        button {
                             font-size: 1.2rem;
                             width: 35px;
                             height: 35px;
 
-                            &:active{
+                            &:active {
                                 background-color: $dark-green;
                             }
                         }
-                        span{
+                        span {
                             margin-left: 5px;
                             margin-right: 5px;
                         }
                     }
                 }
-                .add_to_cart_btn_2{
+                .add_to_cart_btn_2 {
                     justify-self: left;
                 }
             }
+
+            .detailed_description_container {
+                height: 200px;
+                grid-column: 1/4;
+                width: 70%;
+                justify-self: left;
+
+                .sub_header {
+                    font-size: clamp(1rem, 7vw, 2rem);
+                    font-weight: 600;
+                    color: $black-color;
+                }
+
+                .text_content {
+                    color: $gray-color;
+                    font-size: 1rem;
+                }
+            }
         }
-        .description_isopen{
+        .description_isopen {
             opacity: 1;
             transform: translateX(100%);
             transition: 250ms;
         }
 
-
         @media (max-width: 1440px) {
-            .shop_items_container{
+            .shop_items_container {
                 margin-bottom: 80px;
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         @media (max-width: 1024px) {
-            .shop_items_container{
+            .shop_items_container {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .item_description_container{
+            .item_description_container {
                 grid-template-columns: 100%;
+                grid-template-rows: 60% auto;
 
-                .image_container{
-                    margin-top: 50px;
+                .image_container {
+                    margin-top: 200px;
                     width: 100%;
                     height: 100%;
-                    justify-items: left;
-                    img{
-                        width: clamp(50%, 70vw, 100%);
-                        height: auto;
-                        object-fit: cover;
+                    img {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
-                .content_container{
+                .content_container {
                     align-content: center;
-                    padding-bottom: 50px;
-                    padding-top: 50px;
+                    margin-top: 150px;
+                }
+
+                .detailed_description_container {
+                    margin-top: 100px;
+                    grid-column: 1;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
         @media (max-width: 650px) {
-            .shop_items_container{
+            .shop_items_container {
                 grid-template-columns: repeat(1, 1fr);
             }
 
-            .shop_filter{
-                .filter_list{
+            .shop_filter {
+                .filter_list {
                     display: grid;
-    
-                    .filter_item{
+
+                    .filter_item {
                         margin-left: 0;
                     }
                 }
             }
 
-            .item_description_container{
-                .image_container{
-                    img{
+            .item_description_container {
+                .image_container {
+                    img {
                         width: 100%;
                     }
                 }

@@ -40,6 +40,13 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
                     <button onClick={() => addToCart(currentItem)} className="add_to_cart_btn_2">Add to Cart +</button>
                 </div>
             </div>
+
+            <article className="detailed_description_container">
+                <p className="sub_header">Description:</p>
+                <p className="text_content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quae in quos laudantium totam soluta optio expedita quo. Consequatur, esse! Aperiam, optio repudiandae tenetur rerum sint at pariatur porro fugiat quod. Nam dolorum tempore praesentium mollitia, quibusdam porro vel possimus sint iusto rerum harum, maiores iure earum, repellat dolores perferendis.
+                </p>
+            </article>
         </div>
     )
 })
