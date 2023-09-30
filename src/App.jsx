@@ -1,11 +1,11 @@
 import './styles/main.scss'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import data from './data.json'
 
 import Navbar from './layout/Navbar'
-import Footer from './layout/Footer'
 import Sidebar from './layout/Sidebar'
+import CartModal from './layout/cart_modal/CartModal'
+import Footer from './layout/Footer'
 import Home from './pages/home/Home'
 import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
@@ -16,6 +16,13 @@ import { ShopFilterProvider } from './context/ShopFilterContext'
 import ShopItemsContext from './context/ShopItemsContext'
 
 function App() {
+  const [cartIsOpen, setCartIsOpen] = useState(false);
+  cartIsOpen === true ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "scroll";
+
+  function openCart() {
+    setCartIsOpen(true)
+  }
+
   const [cartItems, setCartItems] = useState([]);
   const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
   const [quantity, setQuantity] = useState(1);
@@ -33,8 +40,6 @@ function App() {
     setQuantity((prevQuantity) => prevQuantity - 1)
   }
 
-  console.log(cartItems);
-  
 
   function addToCart(shopItem) {
     if (existingCartItems.some((existingItem) => existingItem.id === shopItem.id)) {
@@ -58,13 +63,19 @@ function App() {
     setQuantity(1)
   }
 
-
   return (
     <>
       <SidebarOpenProvider>
-        <Navbar />
+        <Navbar openCart={openCart} />
         <Sidebar />
       </SidebarOpenProvider>
+
+      <CartModal
+        cartIsOpen={cartIsOpen}
+        setCartIsOpen={setCartIsOpen}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
 
       <ShopFilterProvider>
         <ShopItemsContext.Provider value={{ addToCart, quantity, incrementQuantity, decrementQuantity }}>

@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import SidebarOpenContext from '../context/SidebarOpenContext'
 import useCurrentLocation from '../hooks/useCurrentLocation'
 
-const Navbar = () => {
+const Navbar = ({ openCart }) => {
   const { getClassName } = useCurrentLocation();
   const [reachedTop, setReachedTop] = useState(true);
   const { setIsOpen } = useContext(SidebarOpenContext);
@@ -48,7 +48,7 @@ const Navbar = () => {
           <button aria-label='open-mobile-navigation' onClick={() => setIsOpen(true)} className='bars_icon'>
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <button aria-label='open-shopping-cart' className='cart_icon'>
+          <button onClick={openCart} aria-label='open-shopping-cart' className='cart_icon'>
             <FontAwesomeIcon icon={faShoppingCart} />
           </button>
         </div>
