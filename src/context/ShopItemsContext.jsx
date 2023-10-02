@@ -17,7 +17,7 @@ export function ShopItemsProvider({ children }) {
   }
 
   function decrementQuantity() {
-    setQuantity((prevQuantity) => prevQuantity - 1)
+    setQuantity((prevQuantity) => prevQuantity <= 1 ? 1 : prevQuantity - 1)
   }
 
 
