@@ -1,5 +1,5 @@
 import './styles/main.scss'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Navbar from './layout/Navbar'
@@ -17,12 +17,18 @@ import { ShopItemsProvider } from './context/ShopItemsContext'
 
 function App() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
-  cartIsOpen === true ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "scroll";
+
+  useEffect(() => {
+    cartIsOpen === true ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "scroll";
+    return () => {
+      document.body.style.overflowY = 'scroll';
+    }
+  }, [cartIsOpen])
 
   function openCart() {
     setCartIsOpen(true)
   }
-  
+
   return (
     <>
       <SidebarOpenProvider>
