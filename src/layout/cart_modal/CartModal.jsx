@@ -24,11 +24,11 @@ const CartModal = ({ cartIsOpen, setCartIsOpen }) => {
   return (
     <div className={`black_page_layer ${cartIsOpen === true ? "" : "removeBlackPageLayer"}`}>
       <aside className={`cart_container ${cartIsOpen === true ? "openCart" : ""}`}>
-        <button onClick={() => setCartIsOpen(false)} className="close_cart_btn">
+        <button onClick={() => setCartIsOpen(false)} className="close_cart_btn" aria-label="close-shopping-cart">
           <FontAwesomeIcon icon={faX} />
         </button>
         <ul className="cart_items_list">
-          {cartItems.length === 0 ? <div className="no_items_added_msg">No items added</div> : (
+          {cartItems.length === 0 ? <li className="no_items_added_msg">No items added</li> : (
             cartItems.map((item) => {
               return (
                 <CartItem
