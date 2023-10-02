@@ -22,9 +22,7 @@ function App() {
   function openCart() {
     setCartIsOpen(true)
   }
-
-
-
+  
   return (
     <>
       <SidebarOpenProvider>

@@ -39,7 +39,9 @@
                 height: 100%;
                 font-size: 1.4rem;
                 color: $black-color;
-                @include grid-center;
+                display: grid;
+                justify-content: center;
+                align-items: center;
             }
 
             li {
