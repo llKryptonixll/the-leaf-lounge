@@ -1,11 +1,12 @@
 import { createContext, useState, useMemo } from 'react';
+import PropTypes from "prop-types"
 import data from '../data.json'
 const ShopFilterContext = createContext();
 
-export function ShopFilterProvider ({ children }) {
+export function ShopFilterProvider({ children }) {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const allPlants = useMemo(() => Object.values(data.plantsData).flat(), []);
-    
+
     const filteredPlants = useMemo(() => {
         return selectedCategory === "All" ? allPlants : data.plantsData[selectedCategory.toLowerCase()];
     }, [selectedCategory, allPlants]);
@@ -17,5 +18,9 @@ export function ShopFilterProvider ({ children }) {
     )
 
 }
+
+ShopFilterProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default ShopFilterContext;

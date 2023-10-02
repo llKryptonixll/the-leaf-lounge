@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
+import PropTypes from "prop-types"
 import { Link } from 'react-router-dom'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -56,5 +57,9 @@ const Navbar = ({ openCart }) => {
     </header>
   )
 }
+
+Navbar.propTypes = {
+  openCart: PropTypes.func.isRequired
+};
 
 export default Navbar

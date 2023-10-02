@@ -18,18 +18,18 @@
         min-height: 680px;
         width: 100%;
         max-width: 380px;
-        grid-template-rows: 80% 20%;
+        grid-template-rows: 5% 75% 20%;
         position: absolute;
         opacity: 0;
         right: -380px;
         transition: 200ms;
 
-        .close_cart_mobile{
+        .close_cart_btn{
             background-color: $light_green;
             color: $black-color;
             width: 40px;
             height: 40px;
-            display: none;
+            display: block;
         }
 
         .cart_items_list {
@@ -105,13 +105,6 @@
 
     @media (max-width: 500px) {
         padding: 0;
-
-        .cart_container{
-            grid-template-rows: 5% 75% 20%;
-            .close_cart_mobile{
-                display: block;
-            }
-        }
     }
 
     .openCart{

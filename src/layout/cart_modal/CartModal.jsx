@@ -1,8 +1,12 @@
 import CartItem from "./CartItem";
+import PropTypes from "prop-types"
+import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import ShopItemsContext from "../../context/ShopItemsContext";
 
-const CartModal = ({ cartIsOpen, cartItems, setCartItems, setCartIsOpen }) => {
+const CartModal = ({ cartIsOpen, setCartIsOpen }) => {
+  const { cartItems, setCartItems } = useContext(ShopItemsContext);
 
   function handleItemDelete(productId) {
     const newItems = cartItems.filter((item) => item.id !== productId)
@@ -20,7 +24,7 @@ const CartModal = ({ cartIsOpen, cartItems, setCartItems, setCartIsOpen }) => {
   return (
     <div className={`black_page_layer ${cartIsOpen === true ? "" : "removeBlackPageLayer"}`}>
       <aside className={`cart_container ${cartIsOpen === true ? "openCart" : ""}`}>
-        <button onClick={() => setCartIsOpen(false)} className="close_cart_mobile">
+        <button onClick={() => setCartIsOpen(false)} className="close_cart_btn">
           <FontAwesomeIcon icon={faX} />
         </button>
         <ul className="cart_items_list">
@@ -54,6 +58,11 @@ const CartModal = ({ cartIsOpen, cartItems, setCartItems, setCartIsOpen }) => {
       </aside>
     </div>
   )
+}
+
+CartModal.propTypes = {
+  cartIsOpen: PropTypes.bool.isRequired,
+  setCartIsOpen: PropTypes.func.isRequired
 }
 
 export default CartModal

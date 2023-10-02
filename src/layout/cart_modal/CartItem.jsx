@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types"
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
 const CartItem = ({ productId, handleItemDelete, productName, productPrice, productImage, productQuantity }) => {
@@ -19,6 +19,15 @@ const CartItem = ({ productId, handleItemDelete, productName, productPrice, prod
       </button>
     </li>
   )
+}
+
+CartItem.propTypes = {
+  productId: PropTypes.string.isRequired,
+  handleItemDelete: PropTypes.func.isRequired,
+  productName: PropTypes.string.isRequired,
+  productPrice: PropTypes.number.isRequired,
+  productImage: PropTypes.string.isRequired,
+  productQuantity: PropTypes.number.isRequired
 }
 
 export default CartItem;

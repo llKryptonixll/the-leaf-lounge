@@ -7,7 +7,7 @@ const Shop = () => {
 
   const { selectedCategory, setSelectedCategory, filteredPlants } = useContext(ShopFilterContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [currentItem, setCurrentItem] = useState("");
+  const [currentItem, setCurrentItem] = useState({});
 
   return (
     <main className='main_shop'>

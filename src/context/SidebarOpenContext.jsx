@@ -1,7 +1,8 @@
 import { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 const SidebarOpenContext = createContext();
 
-export function SidebarOpenProvider ({ children }) {
+export function SidebarOpenProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -9,6 +10,10 @@ export function SidebarOpenProvider ({ children }) {
       {children}
     </SidebarOpenContext.Provider>
   );
+}
+
+SidebarOpenProvider.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 export default SidebarOpenContext;

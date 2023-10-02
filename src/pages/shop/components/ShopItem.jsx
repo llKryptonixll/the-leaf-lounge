@@ -56,11 +56,16 @@ const ShopItem = memo(({ item, name, price, image, setIsOpen, setCurrentItem, qu
   );
 });
 
+ShopItem.displayName = 'ShopItemDescription';
+
 ShopItem.propTypes = {
   item: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  setCurrentItem: PropTypes.func.isRequired,
+  quantity: PropTypes.number,
 };
 
 export default ShopItem;

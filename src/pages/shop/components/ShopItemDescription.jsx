@@ -1,4 +1,5 @@
 import { useContext, memo } from "react";
+import PropTypes from 'prop-types';
 import ShopItemsContext from '../../../context/ShopItemsContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -13,11 +14,11 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
         <div className={`${isOpen === true ? "description_isopen" : ""} item_description_container`}>
             <nav>
                 <button aria-label="back-to-shop" onClick={() => setIsOpen(false)}>
-                    <FontAwesomeIcon icon={faArrowLeft}/>
+                    <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
             </nav>
             <div className="image_container">
-                <img alt="product-image" src={image} loading="lazy"/>
+                <img alt="product-image" src={image} loading="lazy" />
             </div>
             <div className="content_container">
                 <div className="header">
@@ -25,7 +26,7 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
                     <p>{price}</p>
                 </div>
                 <div className="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Doloremque esse accusantium autem assumenda, fugiat aliquam! Autem voluptatibus laboriosam et eius.
                 </div>
                 <div className="quantity">
@@ -50,5 +51,13 @@ const ShopItemDescription = memo(({ isOpen, setIsOpen, currentItem }) => {
         </div>
     )
 })
+
+ShopItemDescription.displayName = 'ShopItemDescription';
+
+ShopItemDescription.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    setIsOpen: PropTypes.func.isRequired,
+    currentItem: PropTypes.object.isRequired
+};
 
 export default ShopItemDescription
