@@ -21,6 +21,9 @@
         .text-wrapper {
             display: grid;
             gap: 10px;
+            .sub_header, h1, .main_text, .shop_now_btn{
+                position: relative;
+            }
             .sub_header {
                 font-weight: 600;
                 color: $light-green;
@@ -48,7 +51,6 @@
             border-radius: 4px;
             transition: 200ms;
             cursor: pointer;
-            position: relative;
             border: 2px solid transparent;
 
             &:hover {
@@ -62,18 +64,23 @@
         }
     }
 
-    .image_slider {
-        background-color: $black-color;
-        height: 70%;
-        width: 70%;
+    .image_slide_container{
         position: relative;
-        box-shadow: 5px 5px 15px hsl(0, 0%, 19%);
-
-        img {
-            position: absolute;
-            width: 100%;
+        width: 70%;
+        height: 70%;
+        .image_slider {
+            background-color: $black-color;
             height: 100%;
-            object-fit: fill;
+            width: 100%;
+            position: relative;
+            box-shadow: 5px 5px 15px hsl(0, 0%, 20%);
+    
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
         }
     }
 }
@@ -92,6 +99,7 @@
     @include grid-center;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
 
     .article_container {
         @include padding-gap;
@@ -106,14 +114,18 @@
                 font-size: 2.5rem;
                 width: 400px;
                 line-height: 50px;
-
-                span {
+                span{
+                    position: relative;
+                }
+                span:nth-child(2) {
                     font-family: "Libre Baskerville", serif;
                     color: $black-color;
+
                 }
             }
             .text {
                 color: $gray-color;
+                position: relative;
             }
         }
     }
@@ -127,6 +139,7 @@
 
             .content_wrapper {
                 width: 100%;
+                position: relative;
                 p:nth-child(1) {
                     color: $dark-green;
                     font-weight: 600;
@@ -140,6 +153,7 @@
         }
         .icon_wrapper {
             @include flex-center;
+            position: relative;
             background-color: $dark-green;
             width: 70px;
             height: 70px;
@@ -155,6 +169,7 @@
             object-fit: fill;
             width: 100%;
             height: auto;
+            position: relative;
         }
     }
 }
@@ -327,6 +342,11 @@
         grid-template-columns: 100%;
         height: auto;
 
+        .image_slide_container{
+            position: relative;
+            width: 100%;
+            height: 550px;
+        }
         .image_slider {
             width: 100%;
             height: 550px;
