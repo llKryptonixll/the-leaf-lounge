@@ -24,7 +24,7 @@ const CartModal = ({ cartIsOpen, setCartIsOpen }) => {
   return (
     <div className={`black_page_layer ${cartIsOpen === true ? "" : "removeBlackPageLayer"}`}>
       <aside className={`cart_container ${cartIsOpen === true ? "openCart" : ""}`}>
-        <button onClick={() => setCartIsOpen(false)} className="close_cart_btn">
+        <button onClick={() => setCartIsOpen(false)} className="close_cart_btn" aria-label="close-shopping-cart">
           <FontAwesomeIcon icon={faX} />
         </button>
         <ul className="cart_items_list">
