@@ -13,7 +13,9 @@
             display: grid;
             gap: 10px;
             justify-self: self-start;
-
+            p{
+                position: relative;
+            }
             p:nth-child(1) {
                 color: $dark-green;
                 font-weight: 600;
@@ -33,6 +35,7 @@
             justify-items: end;
             align-items: center;
             width: 100%;
+            position: relative;
             img {
                 width: 100%;
                 object-fit: cover;
@@ -47,6 +50,9 @@
         gap: 50px;
 
         .header {
+            p{
+                position: relative;
+            }
             p:nth-child(1) {
                 font-family: "Libre Baskerville", serif;
                 color: $light-green;

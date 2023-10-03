@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -5,26 +6,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import AnimationContext from '../../../context/AnimationContext';
 
 const HeroSection = () => {
-  const subHeaderAnimation = {
-    initial: { opacity: 0, top: -30 },
-    whileInView: { opacity: 1, top: 0 },
-    transition: { duration: 0.5 },
-    viewport: { once: true }
-  }
-  const headerAnimation = {
-    initial: { opacity: 0, top: -60 },
-    whileInView: { opacity: 1, top: 0 },
-    transition: { duration: 0.5, delay: 0.2 },
-    viewport: { once: true }
-  }
-  const mainTextAnimation = {
-    initial: { opacity: 0, top: -60 },
-    whileInView: { opacity: 1, top: 0 },
-    transition: { duration: 0.5, delay: 0.3 },
-    viewport: { once: true }
-  }
   const shopNowBtnAnimation = {
     initial: { opacity: 0, right: -100, rotate: -10 },
     whileInView: { opacity: 1, right: 0, rotate: 0 },
@@ -38,14 +22,16 @@ const HeroSection = () => {
     viewport: { once: true }
   }
 
+  const { textAnimation1, textAnimation2, mainTextAnimation } = useContext(AnimationContext);
+
   return (
     <section className='hero_section'>
       <article className='hero_article'>
         <div className='text-wrapper'>
-          <motion.p {...subHeaderAnimation} className='sub_header'>
+          <motion.p {...textAnimation1} className='sub_header'>
             TAKE A PLANT
           </motion.p>
-          <motion.h1 {...headerAnimation}>
+          <motion.h1 {...textAnimation2}>
             Get 20% Off
             Order Now
           </motion.h1>

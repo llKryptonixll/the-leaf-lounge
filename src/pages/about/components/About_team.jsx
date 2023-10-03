@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import AnimationContext from '../../../context/AnimationContext'
+import { motion } from 'framer-motion'
 import data from "../../../data.json"
 import TeamMembers from './TeamMembers'
 
 const About_team = () => {
+  const { textAnimation1, textAnimation2 } = useContext(AnimationContext)
 
   const [rendercount, setRenderCount] = useState(3);
 
@@ -15,14 +18,15 @@ const About_team = () => {
   return (
     <section className="about_team_section">
       <div className="header">
-        <p>Evergreen florist, Evelyn Greenleaf</p>
-        <p>Meet the Team that makes miracles happen</p>
+        <motion.p {...textAnimation1}>Evergreen florist, Evelyn Greenleaf</motion.p>
+        <motion.p {...textAnimation2}>Meet the Team that makes miracles happen</motion.p>
       </div>
       <div className="team_container">
         {data.team_data.slice(0, rendercount).map((teamItem) => {
           return(
             <TeamMembers 
               key={teamItem.id}
+              id={teamItem.id}
               image={teamItem.image}
               name={teamItem.name}
               profession={teamItem.profession}

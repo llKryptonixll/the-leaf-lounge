@@ -1,6 +1,16 @@
+import { useContext } from "react";
+import AnimationContext from "../../../context/AnimationContext";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
+  const { textAnimation1, textAnimation2 } = useContext(AnimationContext)
+  const formAnimation = {
+    initial: { opacity: 0, top: -30 },
+    whileInView: { opacity: 1, top: 0 },
+    transition: { duration: 0.5, delay: 0.3 },
+    viewport: { once: true }
+}
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const inputErrorStyles = {
@@ -15,11 +25,11 @@ const ContactForm = () => {
   return (
     <section className="form_section">
       <div className="form_header">
-        <p>Contact Us Now</p>
-        <p>Empowering individuals to become leaf enthusiasts - a compilation of articles crafted by the Leaf Lounge team of Plant Enthusiasts.</p>
+        <motion.p {...textAnimation1}>Contact Us Now</motion.p>
+        <motion.p {...textAnimation2}>Empowering individuals to become leaf enthusiasts - a compilation of articles crafted by the Leaf Lounge team of Plant Enthusiasts.</motion.p>
       </div>
       
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <motion.form {...formAnimation} onSubmit={handleSubmit(onSubmit)}>
         <div className="input_wrapper">
           <label htmlFor="name">Your Name</label>
           <input
@@ -70,7 +80,7 @@ const ContactForm = () => {
           {errors.message && <span style={{...errorMessageStyles}}>This field is required</span>}
         </div>
         <button className='submit_button' type='submit'>Contact Us</button>
-      </form>
+      </motion.form>
     </section>
   )
 }

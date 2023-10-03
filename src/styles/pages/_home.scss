@@ -193,6 +193,7 @@
             img {
                 width: 32%;
                 height: 550px;
+                position: relative;
             }
         }
     }
@@ -268,6 +269,7 @@
         }
     }
     .small_image_container {
+        position: relative;
         gap: 40px;
         .small_image_wrapper {
             display: grid;

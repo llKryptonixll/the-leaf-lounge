@@ -14,6 +14,7 @@ import Shop from './pages/shop/Shop'
 import { SidebarOpenProvider } from './context/SidebarOpenContext';
 import { ShopFilterProvider } from './context/ShopFilterContext'
 import { ShopItemsProvider } from './context/ShopItemsContext'
+import { AnimationProvider } from './context/AnimationContext'
 
 function App() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
@@ -42,12 +43,14 @@ function App() {
             cartIsOpen={cartIsOpen}
             setCartIsOpen={setCartIsOpen}
           />
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='shop' element={<Shop />} />
-            <Route path='about' element={<About />} />
-            <Route path='contact' element={<Contact />} />
-          </Routes>
+          <AnimationProvider>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='shop' element={<Shop />} />
+              <Route path='about' element={<About />} />
+              <Route path='contact' element={<Contact />} />
+            </Routes>
+          </AnimationProvider>
         </ShopItemsProvider>
       </ShopFilterProvider>
       <Footer />
