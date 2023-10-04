@@ -24,6 +24,7 @@ const TeamMembers = ({ id, image, name, profession }) => {
 };
 
 TeamMembers.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   profession: PropTypes.string.isRequired,
