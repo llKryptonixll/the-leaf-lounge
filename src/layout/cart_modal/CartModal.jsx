@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import PropTypes from "prop-types"
 import { useContext } from "react";
@@ -51,9 +52,9 @@ const CartModal = ({ cartIsOpen, setCartIsOpen }) => {
             <p className="sub_header">Total:</p>
             <span className="price">${totalCartPrice}</span>
           </div>
-          <button className="checkout_button">
+          <Link className="checkout_button" onClick={() => setCartIsOpen(false)} to={"/checkout"}>
             CHECK OUT
-          </button>
+          </Link>
         </div>
       </aside>
     </div>

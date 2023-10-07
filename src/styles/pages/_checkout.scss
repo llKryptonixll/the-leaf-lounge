@@ -1,0 +1,193 @@
+.main_checkout {
+    @include padding-gap;
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: $black-color;
+    margin-bottom: 100px;
+
+    .payment_section {
+        width: 100%;
+        .payment_form {
+            display: grid;
+            gap: 10px;
+            .header {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+            .pay_with_container {
+                display: grid;
+                gap: 5px;
+                width: fit-content;
+                p:nth-child(1) {
+                    font-weight: 600;
+                }
+                .or_pay_with {
+                    display: grid;
+                    align-items: center;
+                    position: relative;
+                    color: $gray-color;
+                    font-size: 0.8rem;
+                    text-align: center;
+                    width: 100%;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background-color: hsl(0, 0%, 70%);
+                        width: clamp(10px, 22vw, 110px);
+                        height: 1px;
+                    }
+                    &::after {
+                        right: 0;
+                    }
+                }
+                .button_wrapper {
+                    display: flex;
+                    .paypal_btn,
+                    .apple_pay_btn {
+                        width: 160px;
+                        height: 35px;
+                        border-radius: 5px;
+                    }
+                    .paypal_btn {
+                        background-color: hsl(42, 99%, 62%);
+                        .icon {
+                            font-size: 1.3rem;
+                        }
+                    }
+                    .apple_pay_btn {
+                        margin-left: 20px;
+                        background-color: $black-color;
+                        color: $soft-white-color;
+                        .icon {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+                @media (max-width: 450px) {
+                    width: 100%;
+                    .button_wrapper{
+                        display: grid;
+                        gap: 20px;
+                        width: 100% !important;
+                        .apple_pay_btn{
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .form_content_wrapper {
+                display: grid;
+                gap: 20px;
+                .card_type {
+                    .title {
+                        font-size: 0.7rem;
+                        color: $gray-color;
+                    }
+                    .card_types_container {
+                        display: flex;
+                        .image_wrapper:nth-child(2) {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
+                .input_wrapper {
+                    display: grid;
+                    gap: 10px;
+                    width: 80%;
+                    .sub_header {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                    }
+                    .input_container {
+                        display: grid;
+                    }
+                    .small_input_container {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        column-gap: 20px;
+                    }
+                    input {
+                        @include general-input;
+                        width: 100%;
+                        height: 35px;
+                    }
+                    ::placeholder {
+                        color: $black-color;
+                        font-size: 0.8rem;
+                    }
+                }
+                .form_submit_button {
+                    @include general-form-submit-button;
+                    width: 80%;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    .order_summary_section {
+        display: grid;
+        gap: 20px;
+        align-content: start;
+        color: $black-color;
+        .wrapper {
+            .header {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+            .products_list {
+                max-height: 350px;
+                overflow-y: auto;
+                display: grid;
+                gap: 20px;
+                padding-right: 10px;
+                .product_item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .main_content_container {
+                        display: flex;
+                        align-items: center;
+
+                        .description_wrapper {
+                            margin-left: 10px;
+                            margin-right: 10px;
+                        }
+                        .quantity{
+                            @include flex-center;
+                            border: 1px solid $light-green;
+                            border-radius: 50%;
+                            width: 23px;
+                            height: 23px;
+                        }
+                    }
+                }
+            }
+        }
+        .total_price{
+            p:nth-child(1){
+                font-weight: 600;
+            }
+        }
+    }
+    @media (max-width: 1050px) {
+        grid-template-columns: 100%;
+        gap: 50px;
+
+        .payment_form {
+            .form_content_wrapper {
+                .input_wrapper,
+                .form_submit_button {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}

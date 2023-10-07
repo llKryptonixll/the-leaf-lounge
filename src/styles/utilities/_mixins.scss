@@ -63,6 +63,39 @@
     }
 }
 
+@mixin general-input{
+    border: none;
+    background-color: hsl(0, 0%, 93%);
+    outline-color: $light-green;
+    padding-left: 15px;
+}
+
+@mixin general-form-submit-button{
+    position: relative;
+    background-color: $dark-green;
+    color: $soft-white-color;
+    z-index: 1;
+    font-size: 1rem;
+    &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $light-green;
+        width: 0;
+        height: 100%;
+        transition: 250ms;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+            transition: 250ms;
+        }
+    }
+}
+
 @mixin general-header{
     .header{
         text-align: center;

@@ -22,8 +22,8 @@ const CartItem = ({ productId, handleItemDelete, productName, productPrice, prod
 }
 
 CartItem.propTypes = {
-  productId: PropTypes.string.isRequired,
-  handleItemDelete: PropTypes.func.isRequired,
+  productId: PropTypes.string,
+  handleItemDelete: PropTypes.func,
   productName: PropTypes.string.isRequired,
   productPrice: PropTypes.number.isRequired,
   productImage: PropTypes.string.isRequired,

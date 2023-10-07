@@ -154,10 +154,7 @@
             }
             input,
             textarea {
-                border: none;
-                background-color: hsl(0, 0%, 93%);
-                outline-color: $light-green;
-                padding-left: 15px;
+                @include general-input;
             }
             ::placeholder {
                 color: $black-color;
@@ -171,34 +168,11 @@
                 padding-top: 15px;
             }
             .submit_button {
-                position: relative;
-                z-index: 1;
-                grid-row: 3;
-                justify-self: start;
-                background-color: $dark-green;
+                @include general-form-submit-button;
                 width: 160px;
                 height: 50px;
-                color: $soft-white-color;
-                font-size: 1rem;
-
-                &::after {
-                    content: "";
-                    z-index: -1;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background-color: $light-green;
-                    width: 0;
-                    height: 100%;
-                    transition: 250ms;
-                }
-
-                &:hover {
-                    &::after {
-                        width: 100%;
-                        transition: 250ms;
-                    }
-                }
+                grid-row: 3;
+                justify-self: start;
             }
         }
 

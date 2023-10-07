@@ -88,6 +88,7 @@
                 padding-top: 10px;
             }
             .checkout_button {
+                @include flex-center;
                 background-color: $dark-green;
                 color: $soft-white-color;
                 height: 40px;
