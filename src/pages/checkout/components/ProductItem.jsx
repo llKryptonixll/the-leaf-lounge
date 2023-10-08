@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from "prop-types"
 
 const ProductItem = ({ name, price, image, quantity }) => {
     return (
@@ -15,5 +15,12 @@ const ProductItem = ({ name, price, image, quantity }) => {
         </li>
     )
 }
+
+ProductItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+};
 
 export default ProductItem
