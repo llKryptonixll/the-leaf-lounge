@@ -1,6 +1,9 @@
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom';
+import { useContext, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaypal, faApplePay } from '@fortawesome/free-brands-svg-icons'
+import ShopItemsContext from '../../../context/ShopItemsContext'
 
 const PaymentForm = () => {
 
@@ -14,6 +17,16 @@ const PaymentForm = () => {
     }
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
+    const { cartItems } = useContext(ShopItemsContext);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if (cartItems.length === 0) {
+        navigate('/');
+      }
+    }, [cartItems, navigate]);
+    
 
     return (
         <section className='payment_section'>

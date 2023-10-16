@@ -4,181 +4,234 @@
             "id": 1,
             "image": "images/about-images/person_1.webp",
             "name": "Evelyn Greenleaf",
-            "profession": "Owner"   
+            "profession": "Owner"
         },
         {
             "id": 2,
             "image": "images/about-images/person_2.webp",
             "name": "Lily Ramirez",
-            "profession": "Sales Associate"   
+            "profession": "Sales Associate"
         },
         {
             "id": 3,
             "image": "images/about-images/person_3.webp",
             "name": "Grace Bennett",
-            "profession": "Visual Merchandiser"   
+            "profession": "Visual Merchandiser"
         },
         {
             "id": 4,
             "image": "images/about-images/person_4.webp",
             "name": "Sophia Nguyen",
-            "profession": "Inventory Manager"   
+            "profession": "Inventory Manager"
         },
         {
             "id": 5,
             "image": "images/about-images/person_5.webp",
             "name": "Ava Thompson",
-            "profession": "Customer Service Representative"   
+            "profession": "Customer Service Representative"
         },
         {
             "id": 6,
             "image": "images/about-images/person_6.webp",
             "name": "Benjamin Moss",
-            "profession": "Plant Care Specialist"   
+            "profession": "Plant Care Specialist"
         },
         {
             "id": 7,
             "image": "images/about-images/person_7.webp",
             "name": "Samuel Greene",
-            "profession": "Nursery Grower"   
+            "profession": "Nursery Grower"
         },
         {
             "id": 8,
             "image": "images/about-images/person_8.webp",
             "name": "Logan Anderson",
-            "profession": "Delivery Driver"   
+            "profession": "Delivery Driver"
         },
         {
             "id": 9,
             "image": "images/about-images/person_9.webp",
             "name": "Harper Mitchell",
-            "profession": "Plant Stylist/Decorator"   
+            "profession": "Plant Stylist/Decorator"
         },
         {
             "id": 10,
             "image": "images/about-images/person_10.webp",
             "name": "Ethan Sullivan",
-            "profession": "Marketing Coordinator"   
+            "profession": "Marketing Coordinator"
         }
     ],
-
     "plantsData": {
         "succulents": [
             {
                 "id": "succulents_1",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/succulents/1.webp"
+                "in_stock": true,
+                "name": "Ruby Rose",
+                "price": 12.99,
+                "image": "images/shop-images/succulents/1.webp",
+                "small_description": "Vibrant red succulent, perfect for adding a pop of color to any space.",
+                "large_description": "Ruby Rose is a stunning succulent with intense red leaves that resemble delicate petals. This low-maintenance plant thrives in bright light and is a beautiful addition to any indoor or outdoor garden. With its unique hues, Ruby Rose is sure to attract attention and add a vibrant touch to any space."
             },
             {
                 "id": "succulents_2",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/succulents/2.webp"
+                "in_stock": false,
+                "name": "Desert Pearl",
+                "price": 9.99,
+                "image": "images/shop-images/succulents/2.webp",
+                "small_description": "A small and elegant succulent that features pearl-like leaves.",
+                "large_description": "Desert Pearl is a petite succulent with rosettes of pearl-like leaves that give it a unique and elegant appearance. This low-maintenance plant is perfect for small spaces or as part of a succulent arrangement. Its soft green color and intriguing texture make it a popular choice for succulent enthusiasts and collectors alike. Bring the beauty of the desert into your home with Desert Pearl."
             },
             {
                 "id": "succulents_3",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/succulents/3.webp"
+                "in_stock": true,
+                "name": "Silver Moon",
+                "price": 14.99,
+                "image": "images/shop-images/succulents/3.webp",
+                "small_description": "A striking silver succulent that adds a touch of celestial beauty.",
+                "large_description": "Silver Moon is a visually striking succulent with silver-grey leaves that give it an otherworldly charm. This eye-catching plant thrives in both indoor and outdoor environments, making it a versatile addition to any plant collection. The silver hue of its foliage highlights the intricate patterns and textures, adding interest and beauty to any space. Embrace the celestial beauty of Silver Moon in your home or garden."
             }
         ],
         "potter_plants": [
             {
                 "id": "potter_pants_1",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/potter plants/1.webp"
+                "in_stock": false,
+                "name": "Shadow Sage",
+                "price": 14.99,
+                "image": "images/shop-images/potter plants/1.webp",
+                "small_description": "A lush and dark green Potter plant that brings a sense of calm and tranquility.",
+                "large_description": "Shadow Sage is a lush and dark green Potter plant that exudes a sense of calm and tranquility. With its deep green foliage and compact size, Shadow Sage is the perfect companion for desktops, shelves, or indoor gardens. This low-maintenance plant thrives in moderate lighting conditions and adds a touch of serenity to any space. Embrace the soothing presence of Shadow Sage and let it bring a sense of peace to your surroundings."
             },
             {
                 "id": "potter_pants_2",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/potter plants/2.webp"
+                "in_stock": true,
+                "name": "Sunny Sorcerer",
+                "price": 19.99,
+                "image": "images/shop-images/potter plants/2.webp",
+                "small_description": "A vibrant yellow Potter plant that brings warmth and cheer to any room.",
+                "large_description": "Sunny Sorcerer is a delightful Potter plant with bright yellow foliage that radiates warmth and joy. This enchanting plant thrives in well-lit spaces and adds a touch of sunshine to any room or garden. Its vibrant color and compact size make it an excellent choice for both indoor and outdoor Potter plant collections. Embrace the enchantment of Sunny Sorcerer and bring the magic of yellow into your space"
             },
             {
                 "id": "potter_pants_3",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/potter plants/3.webp"
+                "in_stock": true,
+                "name": "Mystic Magenta",
+                "price": 24.99,
+                "image": "images/shop-images/potter plants/3.webp",
+                "small_description": "A captivating purple Potter plant that adds a touch of mystery to any setting.",
+                "large_description": "Mystic Magenta is a captivating Potter plant with mesmerizing purple leaves that bring an air of mystery to any setting. This unique plant is a showstopper, with its deep purple hues and intriguing texture. Perfect for plant enthusiasts and collectors, Mystic Magenta thrives in medium to bright light and adds a touch of elegance to indoor and outdoor spaces. Embrace the mystic allure of Mystic Magenta and let it cast its spell on you."
             },
             {
                 "id": "potter_pants_4",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/potter plants/4.webp"
+                "in_stock": true,
+                "name": "Serene Fern",
+                "price": 17.99,
+                "image": "images/shop-images/potter plants/4.webp",
+                "small_description": "A delicate light green Potter plant that adds a refreshing touch to any room.",
+                "large_description": "Serene Fern is a delicate and light green Potter plant that adds a refreshing touch to any room. This graceful plant features soft, feathery fronds that create a serene and calming atmosphere. Perfect for both indoor and outdoor spaces, Serene Fern thrives in medium to low light conditions and is an excellent choice for adding a splash of green to your plant collection. Embrace the tranquility of Serene Fern and let it brighten up your space."
             }
         ],
         "terrariums": [
             {
                 "id": "terrariums_1",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/terrariums/1.webp"
+                "in_stock": true,
+                "name": "Enchanted Habitat",
+                "price": 29.99,
+                "image": "images/shop-images/terrariums/1.webp",
+                "small_description": "A mesmerizing terrarium plant that creates an enchanting miniature world.",
+                "large_description": "Enchanted Habitat is a mesmerizing terrarium plant that creates an enchanting miniature world. This versatile plant thrives in the enclosed environment of a terrarium, bringing a lush green landscape to life. With its compact size and cascading foliage, Enchanted Habitat adds visual interest and a sense of serenity to any space. Create your own magical terrarium and watch as this plant grows and transforms your living space into a captivating oasis. Embrace the beauty of nature with Enchanted Habitat."
             }
         ],
         "small_plants": [
             {
                 "id": "small_plants_1",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/1.webp"
+                "in_stock": false,
+                "name": "Frosty Elegance",
+                "price": 9.99,
+                "image": "images/shop-images/small plants/1.webp",
+                "small_description": "A delicate white plant with a subtle green accent, adding a touch of sophistication to any space.",
+                "large_description": "Frosty Elegance is a delicate white plant with a subtle green accent, adding a touch of sophistication to any space. With its graceful foliage and contrasting colors, this plant brings an air of elegance and purity. Frosty Elegance thrives in moderate lighting conditions and is a wonderful addition to any indoor garden or tabletop display. Embrace the delicate beauty of this white plant with a green accent and let it elevate your decor."
             },
             {
                 "id": "small_plants_2",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/2.webp"
+                "in_stock": true,
+                "name": "Royal Majesty",
+                "price": 11.99,
+                "image": "images/shop-images/small plants/2.webp",
+                "small_description": "Vibrant purple plant that add a regal touch to your collection.",
+                "large_description": "Royal Majesty consists of vibrant purple plants that add a regal touch to your collection. With their rich, deep purple hues, these plants make a statement and stand out beautifully in any setting. Royal Majesty thrives in bright light conditions and brings a burst of color to indoor and outdoor spaces. Embrace the majestic allure of these purple plants and let them bring a royal charm to your plant collection."
             },
             {
                 "id": "small_plants_3",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/3.webp"
+                "in_stock": true,
+                "name": "Sunny Bloom",
+                "price": 13.99,
+                "image": "images/shop-images/small plants/3.webp",
+                "small_description": "An enchanting sunflower plant that adds a cheerful and sunny vibe to your space.",
+                "large_description": "Sunny Bloom is an enchanting sunflower plant that adds a cheerful and sunny vibe to your space. With its stunning yellow petals and iconic sunflower appearance, this plant brings smiles and positive energy. Sunny Bloom thrives in well-lit areas and is perfect for indoor gardens and sunny windowsills. Embrace the vibrant beauty of this sunflower plant and let it brighten up your day."
             },
             {
                 "id": "small_plants_4",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/4.webp"
+                "in_stock": true,
+                "name": "Lavender Mist",
+                "price": 10.99,
+                "image": "images/shop-images/small plants/4.webp",
+                "small_description": "A delicate light purple plant with a dark green center, creating a captivating contrast.",
+                "large_description": "Lavender Mist is a delicate light purple plant with a dark green center, creating a captivating contrast. This unique plant features soft pastel hues that evoke a sense of serenity and tranquility. Lavender Mist thrives in moderate lighting conditions and adds a touch of elegance to any space. Embrace the soothing beauty of this light purple plant with a dark green center and let it create a peaceful ambiance in your surroundings."
             },
             {
                 "id": "small_plants_5",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/5.webp"
+                "in_stock": true,
+                "name": "Petal Whisperer",
+                "price": 9.99,
+                "image": "images/shop-images/small plants/5.webp",
+                "small_description": "A charming white plant with tiny blossoms, bringing a touch of delicacy and fragrance.",
+                "large_description": "Petal Whisperer is a charming white plant with tiny blossoms, bringing a touch of delicacy and fragrance to your space. With its dainty white flowers, this plant adds a whimsical and romantic touch to indoor gardens and tabletop arrangements. Petal Whisperer thrives in moderate lighting conditions and enchants with its tiny blossoms, creating a delightful visual and aromatic experience. Embrace the gentle beauty of this white plant with tiny blossoms and let it inspire tranquility in your surroundings."
             },
             {
                 "id": "small_plants_6",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/6.webp"
+                "in_stock": false,
+                "name": "Crimson Sunburst",
+                "price": 12.99,
+                "image": "images/shop-images/small plants/6.webp",
+                "small_description": "A stunning rose red plant with a vibrant yellow center, evoking a sense of warmth and passion.",
+                "large_description": "Crimson Sunburst is a stunning rose red plant with a vibrant yellow center, evoking a sense of warmth and passion. With its bold colors and captivating appearance, this plant becomes an eye-catching centerpiece in any collection. Crimson Sunburst thrives in bright light conditions and adds a touch of intensity to indoor and outdoor spaces. Embrace the fiery beauty of this rose red plant with a yellow center and let it ignite your spirit."
             },
             {
                 "id": "small_plants_7",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/small plants/7.webp"
+                "in_stock": true,
+                "name": "Verdant Radiance",
+                "price": 11.99,
+                "image": "images/shop-images/small plants/7.webp",
+                "small_description": "A vibrant yellow green plant with a dark green center, illuminating any space with its radiant hues.",
+                "large_description": "Verdant Radiance is a vibrant yellow green plant with a dark green center, illuminating any space with its radiant hues. With its vivid colors and contrasting tones, this plant brings a burst of energy and brightness to indoor and outdoor settings. Verdant Radiance thrives in well-lit environments and adds a refreshing touch to your plant collection. Embrace the vibrant beauty of this yellow green plant with a dark green center and let it infuse your surroundings with vitality."
             }
         ],
         "cactuses": [
             {
                 "id": "cactuses_1",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/cactuses/1.webp"
+                "in_stock": true,
+                "name": "Prickly Pincushion",
+                "price": 12.99,
+                "image": "images/shop-images/cactuses/1.webp",
+                "small_description": "A petite cactus with lots of tiny, spiky goads that add a unique texture.",
+                "large_description": "Prickly Pincushion is a petite cactus with a fascinating texture. It features numerous tiny, spiky goads that resemble pins on a pincushion, giving it a distinctive appearance. This low-maintenance plant is a great addition to any cactus collection and thrives in bright sunlight. Despite its prickly nature, Prickly Pincushion adds a touch of charm and intrigue to any space. Embrace the unique texture of this cactus and let it capture your imagination."
             },
             {
                 "id": "cactuses_2",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/cactuses/2.webp"
+                "in_stock": true,
+                "name": "Desert Dreamer",
+                "price": 14.99,
+                "image": "images/shop-images/cactuses/2.webp",
+                "small_description": "A graceful light green cactus that adds a touch of elegance to any setting.",
+                "large_description": "Desert Dreamer is a graceful cactus with a vibrant light green color that adds a touch of elegance to any setting. This versatile plant thrives in bright light and brings a sense of tranquility to indoor and outdoor spaces. With its slender and curved stems, Desert Dreamer creates a visually appealing silhouette. Embrace the beauty of nature with this light green cactus and let it transport you to the enchanting landscapes of the desert."
             },
             {
                 "id": "cactuses_3",
-                "name": "cool plant",
-                "price": 27.5,
-                "image": "images/shop-images/cactuses/3.webp"
+                "in_stock": true,
+                "name": "Midnight Oasis",
+                "price": 16.99,
+                "image": "images/shop-images/cactuses/3.webp",
+                "small_description": "A striking dark green cactus that adds a touch of drama to any collection.",
+                "large_description": "Midnight Oasis is a striking dark green cactus that adds a touch of drama to any collection. With its bold and sculptural form, this cactus becomes a focal point in any setting. Midnight Oasis thrives in bright desert-like conditions and offers an air of mystery with its dark coloration. Bring a touch of the night sky into your space with this captivating dark green cactus and create your own midnight oasis."
             }
         ]
     }

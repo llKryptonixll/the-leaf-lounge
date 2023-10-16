@@ -11,6 +11,7 @@ const Navbar = ({ openCart }) => {
   const { getClassName } = useCurrentLocation();
   const [reachedTop, setReachedTop] = useState(true);
   const { setIsOpen } = useContext(SidebarOpenContext);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +25,6 @@ const Navbar = ({ openCart }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
 
   return (
     <header>

@@ -16,22 +16,22 @@ const Shop = () => {
         <nav className='shop_filter'>
           <ul className='filter_list'>
             <li className='filter_item'>
-              <button onClick={() => setSelectedCategory("All")} className={selectedCategory === "All" ? "activeButton": ""}>All</button>
+              <button onClick={() => setSelectedCategory("All")} className={selectedCategory === "All" ? "activeButton" : ""}>All</button>
             </li>
             <li className='filter_item'>
-              <button onClick={() => setSelectedCategory("Succulents")} className={selectedCategory === "Succulents" ? "activeButton": ""}>Succulents</button>
+              <button onClick={() => setSelectedCategory("Succulents")} className={selectedCategory === "Succulents" ? "activeButton" : ""}>Succulents</button>
             </li>
             <li className='filter_item'>
-              <button onClick={() => setSelectedCategory("Potter_Plants")} className={selectedCategory === "Potter_Plants" ? "activeButton": ""}>Potter Plants</button>
+              <button onClick={() => setSelectedCategory("Potter_Plants")} className={selectedCategory === "Potter_Plants" ? "activeButton" : ""}>Potter Plants</button>
             </li>
             <li className='filter_item'>
-              <button onClick={() => setSelectedCategory("Terrariums")} className={selectedCategory === "Terrariums" ? "activeButton": ""}>Terrariums</button>
+              <button onClick={() => setSelectedCategory("Terrariums")} className={selectedCategory === "Terrariums" ? "activeButton" : ""}>Terrariums</button>
             </li>
             <li className='filter_item'>
-              <button onClick={() => setSelectedCategory("Small_Plants")} className={selectedCategory === "Small_Plants" ? "activeButton": ""}>Small Plants</button>
+              <button onClick={() => setSelectedCategory("Small_Plants")} className={selectedCategory === "Small_Plants" ? "activeButton" : ""}>Small Plants</button>
             </li>
             <li className='filter_item'>
-              <button onClick={() => setSelectedCategory("Cactuses")} className={selectedCategory === "Cactuses" ? "activeButton": ""}>Cactuses</button>
+              <button onClick={() => setSelectedCategory("Cactuses")} className={selectedCategory === "Cactuses" ? "activeButton" : ""}>Cactuses</button>
             </li>
           </ul>
         </nav>
@@ -39,20 +39,21 @@ const Shop = () => {
         <div className="shop_items_container">
           {filteredPlants.map((plant) => {
             return (
-              <ShopItem 
+              <ShopItem
                 key={plant.id}
                 item={plant}
                 id={plant.id}
                 name={plant.name}
                 price={plant.price}
                 image={plant.image}
+                inStock={plant.in_stock}
                 setIsOpen={setIsOpen}
                 setCurrentItem={setCurrentItem}
               />
-            ) 
+            )
           })}
         </div>
-        <ShopItemDescription 
+        <ShopItemDescription
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           currentItem={currentItem}

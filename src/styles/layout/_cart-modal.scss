@@ -105,6 +105,19 @@
         }
     }
 
+    .error_message{
+        @include grid-center;
+        position: fixed;
+        top: -40px;
+        right: 0;
+        background-color: #a51a23;
+        font-weight: bold;
+        color: $soft-white-color;
+        width: 300px;
+        height: 40px;
+        transition: 200ms;
+    }
+
     @media (max-width: 500px) {
         padding: 0;
     }
